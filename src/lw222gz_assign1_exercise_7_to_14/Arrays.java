@@ -1,8 +1,5 @@
 package lw222gz_assign1_exercise_7_to_14;
-
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by Lucas on 2016-08-26.
@@ -66,37 +63,115 @@ public class Arrays {
     }
 
 
+    //returns a new int[] that is sorted based on @arr with the least occurrences first.
+    //Example: param { 2,2,2,2,5,6,6,6,1,1,1,1} will return { 5,6,6,6,1,1,1,1,2,2,2,2}
     public int[] sort(int[] arr){
         int[] sortedArr = new int[arr.length];
 
-
         //key is the array element value, value is the occurrences of that value
-        HashMap<Integer,Integer> noOfOccurences = new HashMap<>();
+        TreeMap<Integer,Integer> nrOfOccurrences = new TreeMap<>();
 
 
+        //creates a TreeMap containing:
+        //key as each different value in @arr
+        //value as the amount of occurrences for that key in @arr
         for(int i = 0; i < arr.length; i++){
-            if(noOfOccurences.containsKey(arr[i])){
-                noOfOccurences.put(arr[i], noOfOccurences.get(arr[i])+1);
+
+            //if the entry already exists then it's value is increase by one.
+            if(nrOfOccurrences.containsKey(arr[i])){
+                nrOfOccurrences.put(arr[i], nrOfOccurrences.get(arr[i])+1);
             }
+            //else a new entry is made
             else{
-                noOfOccurences.put(arr[i], 1);
+                nrOfOccurrences.put(arr[i], 1);
             }
         }
-        
 
-        for(Map.Entry<Integer,Integer> entry : noOfOccurences.entrySet()) {
-            int key = entry.getKey();
-            int value = entry.getValue();
 
-            System.out.println(key + " => " + value);
+        int arrIndex = 0;
+        //default first entry (lowest key)
+        int lowestValue = nrOfOccurrences.firstEntry().getValue();
+        int key = nrOfOccurrences.firstKey();
+        int size = nrOfOccurrences.size();
+
+
+        //TODO: this feels like it coulse use some refactoring.
+        for(int i = 0; i < size; i++){
+            //gets the current lowest value and it's key and stores those values.
+            for(Map.Entry<Integer,Integer> entry : nrOfOccurrences.entrySet()) {
+
+                if(entry.getValue() < lowestValue){
+                    key = entry.getKey();
+                    lowestValue = entry.getValue();
+                }
+            }
+
+            //the values are added into the new array
+            for (int j = 0; j < lowestValue; j++){
+                sortedArr[arrIndex] = key;
+                arrIndex++;
+            }
+
+            //the entry is removed since it's values has been added to the array
+            nrOfOccurrences.remove(key, lowestValue);
+
+            //if it's the last iteration of the loop it will break to avoid error.
+            if(i + 1 == size){
+                break;
+            }
+            //If the loop is not yet over default values are reset.
+            lowestValue = nrOfOccurrences.firstEntry().getValue();
+            key = nrOfOccurrences.firstKey();
         }
-
-        System.out.println(noOfOccurences.get(1));
-
-        System.out.println(noOfOccurences);
-
 
         return sortedArr;
+    }
+
+
+    //if the @sub has it's order as a sequence in @arr this method will return true, otherwise false.
+    //NOTE: @sub cant be longer than @arr
+    public boolean hasSubsequence(int[] arr, int[] sub) throws IllegalArgumentException{
+
+        if(arr.length < sub.length){
+            throw new IllegalArgumentException("The sub array cant be longer than the main array.");
+        }
+
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == sub[0]){
+
+                for(int j = 0; j < sub.length; j++){
+                    if(!(arr[i + j] == sub[j])){
+                        break;
+                    }
+                    //if it's the last iteration of the loop and it hasn't broken then
+                    //it truly is a subsequence of @arr.
+                    if(j + 1 == sub.length){
+                        return true;
+                    }
+
+
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    //returns a new array containing the values @arr1[x] - @arr2[x]
+    //EXCEPTION: Throws IllegalArgumentException if the parameters @arr1 and @arr2 does NOT have the same length.
+    public int[] absDif(int[] arr1, int[] arr2) throws IllegalArgumentException{
+
+        if(arr1.length != arr2.length){
+            throw new IllegalArgumentException("The given Array parameters must be of the same length.");
+        }
+        int[] arrDif = new int[arr1.length];
+
+        for(int i = 0; i < arr1.length; i++){
+            arrDif[i] = arr1[i] - arr2[i];
+        }
+        return arrDif;
+
     }
 
 
