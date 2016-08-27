@@ -95,7 +95,7 @@ public class Arrays {
         int size = nrOfOccurrences.size();
 
 
-        //TODO: this feels like it coulse use some refactoring.
+        //TODO: this feels like it could use some refactoring.
         for(int i = 0; i < size; i++){
             //gets the current lowest value and it's key and stores those values.
             for(Map.Entry<Integer,Integer> entry : nrOfOccurrences.entrySet()) {

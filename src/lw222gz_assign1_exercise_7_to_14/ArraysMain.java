@@ -26,10 +26,10 @@ public class ArraysMain {
             System.out.println(arr.toString(arr.replaceAll(myArr, 1, 7)));
             System.out.println(arr.toString(arr.sort(myArr)));
             if(arr.hasSubsequence(myMainSubArr, mySubArr)){
-                System.out.println("JAMEN KOLLA DÄÖR!");
+                System.out.println("Subsequence found.");
             }
             else{
-                System.out.println("Jamen de va ju inte bra...");
+                System.out.println("No subsequence found.");
             }
             System.out.println(arr.toString(arr.absDif(difArr1, diffArr2)));
         }
