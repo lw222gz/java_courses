@@ -1,18 +1,19 @@
-package lw222gz_assign1_exercise_7_to_14;
+package lw222gz_assign1_exercise_7_to_14.exercise_9;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Scanner;
+import static lw222gz_assign1_exercise_1_to_6.CountChars.getPathFromUser;
 
 /**
  * Created by Lucas on 2016-08-27.
  */
 public class CountJava {
 
+    //preset path used for faster testing.
     private static String presetPath = null;//"C://Users/Lucas/Github/Java_assignments/src";
     private static Scanner reader = new Scanner(System.in);
 
@@ -23,10 +24,10 @@ public class CountJava {
     private static ArrayList<String> javaFileNames = new ArrayList<String>();
     private static ArrayList<Integer> javaFileLines = new ArrayList<Integer>();
 
-    //used to read number of lines in a faile
+    //used to read number of lines in a file
     private static LineNumberReader lnr;
 
-    //private static LinkedHashMap<String, Integer> javaFiles = new LinkedHashMap<String, Integer>();
+
 
     public static void main(String args[]){
         //ArrayList position 0 stores the file names, ArrayList position 1 stores the amount of lines for a file
@@ -36,6 +37,8 @@ public class CountJava {
         try{
             if(presetPath == null){
                 System.out.println("Enter path:");
+
+                //getPathFromUser() is a method written in CountChars.java (exercise 6)
                 readFolder(getPathFromUser());
                 printResult();
             }
@@ -51,21 +54,7 @@ public class CountJava {
         }
     }
 
-    //reads a file path from the user, the file path can not only be whitespace.
-    private static Path getPathFromUser(){
-        String str = "";
-        while(true){
-            str = reader.nextLine();
-            if(str.trim().length() > 0){
-                break;
-            }
-            System.out.println("Please give a path input.");
-        }
-
-        return Paths.get(str);
-    }
-
-
+    //reads a folder, this method will call itself if it finds a folder within the given @path parameter.
     private static void readFolder(Path path) throws Exception{
         if(!Files.exists(path)){
             throw new FileNotFoundException("Folder was not found.");
@@ -105,8 +94,12 @@ public class CountJava {
     //prints the result from the files read
     private static void printResult(){
         System.out.println("Files found in given root directory and all of the sub-directories: ");
+        int sum = 0;
         for(int i = 0; i < javaFiles.get(0).size(); i++){
             System.out.println((i+1) + ". " + javaFiles.get(0).get(i) + "   lines = " + javaFiles.get(1).get(i));
+            sum += Integer.parseInt(javaFiles.get(1).get(i).toString());
         }
+
+        System.out.println("Total amount of lines : " + sum);
     }
 }

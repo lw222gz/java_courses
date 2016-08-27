@@ -1,10 +1,12 @@
-package lw222gz_assign1_exercise_7_to_14;
+package lw222gz_assign1_exercise_7_to_14.exercise_8;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+
+import static lw222gz_assign1_exercise_1_to_6.CountChars.getPathFromUser;
 
 
 /**
@@ -51,6 +53,8 @@ public class Histogram {
         try{
             if(presetPath == null){
                 System.out.println("Enter path:");
+
+                //getPathFromUser() is a method written in CountChars.java (exercise 6)
                 readFile(getPathFromUser());
             }
             //if a presetPath is set then that path will be used.
@@ -64,20 +68,6 @@ public class Histogram {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-    }
-
-    //reads a file path from the user, the file path can not only be whitespace.
-    private static Path getPathFromUser(){
-        String str = "";
-        while(true){
-            str = reader.nextLine();
-            if(str.trim().length() > 0){
-                break;
-            }
-            System.out.println("Please give a path input.");
-        }
-
-        return Paths.get(str);
     }
 
     //reads the file located at @path and displays the wanted statistics

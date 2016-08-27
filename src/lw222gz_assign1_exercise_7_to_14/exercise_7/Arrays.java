@@ -1,4 +1,4 @@
-package lw222gz_assign1_exercise_7_to_14;
+package lw222gz_assign1_exercise_7_to_14.exercise_7;
 import java.util.*;
 
 /**
@@ -163,7 +163,7 @@ public class Arrays {
     public int[] absDif(int[] arr1, int[] arr2) throws IllegalArgumentException{
 
         if(arr1.length != arr2.length){
-            throw new IllegalArgumentException("The given Array parameters must be of the same length.");
+            throw new IllegalArgumentException("The given Array parameters must be of the same array length.");
         }
         int[] arrDif = new int[arr1.length];
 

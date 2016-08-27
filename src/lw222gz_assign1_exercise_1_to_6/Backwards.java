@@ -6,20 +6,11 @@ import java.util.Scanner;
  */
 public class Backwards {
 
-    static Scanner reader = new Scanner(System.in);
+    private static Scanner reader = new Scanner(System.in);
 
     public static void main(String args[]){
         System.out.println("Write a line of text: ");
-        String str = reader.nextLine();
-
-        String reversed = "";
-        for (int i = 0; i < str.length(); i++){
-            //-1 is included as str.length() is amount of chars in the string
-            //and str.charAt() works as an array and the first value is 0.
-            reversed += str.charAt(str.length() - i - 1);
-        }
-        System.out.println(reversed);
-
-
+        //prints out reversed string
+        System.out.println("This is your text reversed: \n" + new StringBuilder(reader.nextLine()).reverse().toString());
     }
 }

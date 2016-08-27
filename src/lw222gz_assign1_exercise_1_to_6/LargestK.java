@@ -31,8 +31,8 @@ public class LargestK {
             k += 2;
         }
 
+        //prints out result.
         System.out.println("K = " + k);
-
     }
 
     //reads an integer from the user and returns that value. Integer read is required to be positive.

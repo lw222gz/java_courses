@@ -1,5 +1,6 @@
 package lw222gz_assign1_exercise_1_to_6;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,7 +36,7 @@ public class CountChars {
     }
 
     //reads a file path from the user, the file path can not only be whitespace.
-    private static Path getPathFromUser(){
+    public static Path getPathFromUser(){
         String str = "";
         while(true){
             str = reader.nextLine();
@@ -50,7 +51,7 @@ public class CountChars {
 
     //reads a .txt file with the given path and presents the wanted statistics
     private static void readFile(Path path){
-        if(!Files.exists(path)){
+        if(!Files.exists(path) || Files.isDirectory(path)){
             System.out.println("Given file path was not found. \nFUNCTION ABORTED!");
             return;
         }
@@ -119,7 +120,7 @@ public class CountChars {
             e.printStackTrace();
         }
 
-        //displays stats from the given .txt file.
+        //prints out result read from the given .txt
         System.out.println("In the given text file the following was found:");
         System.out.println("Upper case letters: " + amountOfBigLetters);
         System.out.println("Lower case letters: " + amountOfSmallLetters);

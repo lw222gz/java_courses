@@ -19,13 +19,13 @@ public class CountDigits {
         String valueAsString = Integer.toString(value);
 
 
-
         int amountOfZeroes = 0;
         int amountOfOdds = 0;
         int amountOfEvens = 0;
         int sum = 0;
 
 
+        //loops each character in the string
         for(int i = 0; i < valueAsString.length(); i++){
 
             int number = Character.getNumericValue(valueAsString.charAt(i));
