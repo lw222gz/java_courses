@@ -26,9 +26,6 @@ public class CountJava {
     //used to read number of lines in a file
     private static LineNumberReader lnr;
 
-
-    private static HashMap<String, Integer> testMap = new HashMap<String, Integer>();
-
     public static void main(String args[]){
 
         //ArrayList position 0 stores the file names, ArrayList position 1 stores the amount of lines for a file
