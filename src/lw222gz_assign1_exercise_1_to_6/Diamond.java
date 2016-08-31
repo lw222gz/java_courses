@@ -36,15 +36,17 @@ public class Diamond {
 
             //white space is only counted for one side, therefore it's split in 2.
             whiteSpace -= build / 2;
+
             //amount of stars is 2 per row
             amountOfStars += build;
 
             //When amount of stars is equal to the given value
-            // //then the mid point of the diamond has been reached.
+            //then the mid point of the diamond has been reached and stars for each row is being reduced.
             if(amountOfStars == oddValue){
                 build = -2;
             }
 
+            //prints this row and resets the row value for the next row to be built.
             System.out.println(row);
             row = "";
         }
@@ -70,11 +72,11 @@ public class Diamond {
                 }
             }
             catch (InputMismatchException e){
-                System.out.println("Invalid input.");
+                System.err.println("Invalid input.");
                 reader.next();
             }
             catch (IndexOutOfBoundsException e){
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
 
         }

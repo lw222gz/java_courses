@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256c9cfd-54f1-4399-a10f-26fa815fcf1b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz_assign1_exercise_1_to_6/Backwards.class" afterPath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz_assign1_exercise_1_to_6/Backwards.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.class" afterPath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Diamond.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Diamond.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/HighLow.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/HighLow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/LargestK.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/LargestK.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/ArraysMain.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/ArraysMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java" afterPath="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java" />
     </list>
     <ignored path="2DV600.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,16 +33,35 @@
     <favorites_list name="2DV600" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="QueueInterface.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_14/QueueInterface.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CountDigits.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountDigits.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="442">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountJava.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
-                <element signature="e#0#888#0" expanded="true" />
-                <element signature="imports" expanded="true" />
+                <element signature="e#1087#1104#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountChars.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" column="107" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="107" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,7 +94,6 @@
         <option value="$PROJECT_DIR$/src/lw222gz_assign1/CountDigits.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1/HighLow.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1/Diamond.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Diamond.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/ArraysMain.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/Arrays.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/Histogram.java" />
@@ -79,20 +108,22 @@
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_10/PointMain.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Suite.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Rank.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Play123Main.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Deck.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Card.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_10/Point.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/Arrays.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountDigits.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Backwards.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/ArraysMain.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/LargestK.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountDigits.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/HighLow.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Diamond.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Backwards.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java" />
       </list>
     </option>
   </component>
@@ -126,6 +157,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,10 +208,6 @@
               <option name="myItemId" value="lw222gz_assign1_exercise_7_to_14" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exercise_14" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -197,12 +226,14 @@
               <option name="myItemId" value="lw222gz_assign1_exercise_7_to_14" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exercise_9" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -210,7 +241,7 @@
       <recent name="C:\Users\Lucas\Github\Java_assignments\src\lw222gz_assign1_exercise_7_to_14\exercise_14" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Backwards">
+  <component name="RunManager" selected="Application.CountJava">
     <configuration default="false" name="ArraysMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -219,26 +250,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="lw222gz_assign1_exercise_7_to_14.exercise_7.ArraysMain" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Java_assignments" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="PointMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lw222gz_assign1_exercise_7_to_14.exercise_7.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lw222gz_assign1_exercise_7_to_14.exercise_10.PointMain" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -299,6 +310,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="lw222gz_assign1_exercise_1_to_6.Backwards" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Java_assignments" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="PlayCardsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lw222gz_assign1_exercise_7_to_14.exercise_12_13.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lw222gz_assign1_exercise_7_to_14.exercise_12_13.PlayCardsMain" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -563,18 +594,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.ArraysMain" />
-      <item index="1" class="java.lang.String" itemvalue="Application.PointMain" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CountJava" />
-      <item index="3" class="java.lang.String" itemvalue="Application.CountChars" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Backwards" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CountJava" />
+      <item index="2" class="java.lang.String" itemvalue="Application.CountChars" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Backwards" />
+      <item index="4" class="java.lang.String" itemvalue="Application.PlayCardsMain" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Backwards" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CountChars" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ArraysMain" />
-        <item index="3" class="java.lang.String" itemvalue="Application.CountJava" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PointMain" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CountJava" />
+        <item index="1" class="java.lang.String" itemvalue="Application.PlayCardsMain" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Backwards" />
+        <item index="3" class="java.lang.String" itemvalue="Application.CountChars" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ArraysMain" />
       </list>
     </recent_temporary>
   </component>
@@ -596,15 +627,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-31" y="0" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27505568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27505568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -616,7 +648,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -663,7 +694,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -672,6 +717,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_14/QueueInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#888#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
@@ -700,8 +756,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1555#1572#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1555#1572#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -728,10 +784,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Suite.java">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_14/QueueInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#888#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Play123Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/Fraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="67" column="58" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#230#236#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -739,53 +850,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/PlayCardsMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Play123Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#230#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/Fraction.java">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_12_13/Suite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_11/FractionMain.java">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_10/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        <state relative-caret-position="51">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -793,105 +874,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_10/Point.java">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
+        <state relative-caret-position="189">
+          <caret line="97" column="72" selection-start-line="97" selection-start-column="67" selection-end-line="97" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/ArraysMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1052">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        <state relative-caret-position="381">
+          <caret line="93" column="36" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_7/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/LargestK.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        <state relative-caret-position="918">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/HighLow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="1428">
+          <caret line="86" column="53" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Diamond.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="313">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountDigits.java">
+    <entry file="file://$PROJECT_DIR$/src/DummyDir/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/Backwards.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        <state relative-caret-position="102">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="376" column="0" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
+          <folding>
+            <element signature="e#15747#15748#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountDigits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_1_to_6/CountChars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="107" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="107" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_9/CountJava.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#821#827#0" expanded="true" />
-            <element signature="e#897#905#0" expanded="true" />
-            <element signature="e#976#985#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_8/Histogram.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="99" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="99" />
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1555#1572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz_assign1_exercise_7_to_14/exercise_14/QueueInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#888#0" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="e#1087#1104#0" expanded="true" />
           </folding>
         </state>
       </provider>

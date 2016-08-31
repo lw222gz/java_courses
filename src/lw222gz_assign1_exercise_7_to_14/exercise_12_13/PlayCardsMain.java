@@ -25,7 +25,7 @@ public class PlayCardsMain {
             d.shuffle();
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
 
 

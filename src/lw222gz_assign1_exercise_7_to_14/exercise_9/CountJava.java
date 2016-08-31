@@ -3,9 +3,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 import static lw222gz_assign1_exercise_1_to_6.CountChars.getPathFromUser;
 
 /**
@@ -28,11 +27,15 @@ public class CountJava {
     private static LineNumberReader lnr;
 
 
+    private static HashMap<String, Integer> testMap = new HashMap<String, Integer>();
 
     public static void main(String args[]){
+
         //ArrayList position 0 stores the file names, ArrayList position 1 stores the amount of lines for a file
         javaFiles.add(javaFileNames);
         javaFiles.add(javaFileLines);
+
+        System.out.println(Files.isDirectory(Paths.get("C://Users/Lucas/Github/Java_assignments/LoremIpsum.txt")));
 
         try{
             if(presetPath == null){
@@ -50,17 +53,25 @@ public class CountJava {
             }
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 
     //reads a folder, this method will call itself if it finds a folder within the given @path parameter.
-    private static void readFolder(Path path) throws Exception{
+    //If the path is not valid or it does not lead to a folder an exception is thrown.
+    private static void readFolder(Path path) throws IOException{
+        //checks if folder path exists and if the given path was a folder.
         if(!Files.exists(path)){
             throw new FileNotFoundException("Folder was not found.");
+            // && !(Files.isDirectory(path))
         }
         else{
             File file = new File(path.toString());
+
+            //Checks that the file path is a directory.
+            if(!file.isDirectory()){
+                throw new IOException("Given path was not a folder.");
+            }
             //list all files in the directory
             File[] files = file.listFiles();
 
@@ -83,7 +94,7 @@ public class CountJava {
                         lnr.close();
                     }
                     catch (Exception e){
-                        throw new Exception("Error occurred when trying to read the java files.");
+                        throw new IOException("Error occurred when trying to read the java files.");
                     }
                 }
             }
@@ -94,6 +105,7 @@ public class CountJava {
     //prints the result from the files read
     private static void printResult(){
         System.out.println("Files found in given root directory and all of the sub-directories: ");
+
         int sum = 0;
         for(int i = 0; i < javaFiles.get(0).size(); i++){
             System.out.println((i+1) + ". " + javaFiles.get(0).get(i) + "   lines = " + javaFiles.get(1).get(i));

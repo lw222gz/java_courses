@@ -91,7 +91,7 @@ public class ArraysMain {
             System.out.println(arr.toString(arr.absDif(myCorrectSubArr, diffArr2)));
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
 
     }

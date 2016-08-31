@@ -84,11 +84,11 @@ public class HighLow {
                 }
             }
             catch (InputMismatchException e){
-                System.out.println("Invalid input.");
+                System.err.println("Invalid input.");
                 reader.next();
             }
             catch (IndexOutOfBoundsException e){
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
 
         }

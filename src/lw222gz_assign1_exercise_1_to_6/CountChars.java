@@ -43,7 +43,7 @@ public class CountChars {
             if(str.trim().length() > 0){
                 break;
             }
-            System.out.println("Please give a path input.");
+            System.err.println("Please give a path input.");
         }
 
         return Paths.get(str);
@@ -52,7 +52,7 @@ public class CountChars {
     //reads a .txt file with the given path and presents the wanted statistics
     private static void readFile(Path path){
         if(!Files.exists(path) || Files.isDirectory(path)){
-            System.out.println("Given file path was not found. \nFUNCTION ABORTED!");
+            System.err.println("Given file path was not found. \nFUNCTION ABORTED!");
             return;
         }
         else{
@@ -111,13 +111,10 @@ public class CountChars {
                             break;
                     }
                 }
-
-
             }
-
         }
         catch (Exception e){
-            e.printStackTrace();
+            System.err.println("An error occurred when trying to read the file. \n"+e.getMessage());
         }
 
         //prints out result read from the given .txt
