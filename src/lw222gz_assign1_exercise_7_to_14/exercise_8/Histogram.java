@@ -6,64 +6,46 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-import static lw222gz_assign1_exercise_1_to_6.CountChars.getPathFromUser;
-
 
 /**
  * Created by Lucas on 2016-08-26.
  */
 public class Histogram {
 
-    //set this to null to have user input own path. Faster testing to have a preset path.
-    private static String presetPath = null;//"C://Users/Lucas/Github/Java_assignments/integers.dat";
-    private static Scanner reader = new Scanner(System.in);
+    //test path: "C://Users/Lucas/Github/Java_assignments/integers.dat";
 
+    //ArrayList that will contain all of the numbers read
     private static ArrayList<Integer> numbers = new ArrayList<Integer>();
 
-    //TODO: Would like to make a Interval class, am I allowed?
-    private static final String INTERVAL_ID_ONE = "1 - 10   ";
-    private static final String INTERVAL_ID_TWO = "11 - 20  ";
-    private static final String INTERVAL_ID_THREE = "21 - 30  ";
-    private static final String INTERVAL_ID_FOUR = "31 - 40  ";
-    private static final String INTERVAL_ID_FIVE = "41 - 50  ";
-    private static final String INTERVAL_ID_SIX = "51 - 60  ";
-    private static final String INTERVAL_ID_SEVEN = "61 - 70  ";
-    private static final String INTERVAL_ID_EIGHT = "71 - 80  ";
-    private static final String INTERVAL_ID_NINE = "81 - 90  ";
-    private static final String INTERVAL_ID_TEN = "91 - 100 ";
-    private static final String INTERVAL_ID_ELEVEN = "101 - 200";
-    //LinkedHashMap contaning all intervals as strings and
-    private static LinkedHashMap<String, Integer> histogram = new LinkedHashMap<String, Integer>();
-
+    //ArrayList that will contain all of the intervals
+    private static ArrayList<Interval> intervals = new ArrayList<Interval>();
 
     public static void main(String args[]){
-        //adds all intervals to the LinkedHashMap and sets their value to 0.
-        histogram.put(INTERVAL_ID_ONE, 0);
-        histogram.put(INTERVAL_ID_TWO, 0);
-        histogram.put(INTERVAL_ID_THREE, 0);
-        histogram.put(INTERVAL_ID_FOUR, 0);
-        histogram.put(INTERVAL_ID_FIVE, 0);
-        histogram.put(INTERVAL_ID_SIX, 0);
-        histogram.put(INTERVAL_ID_SEVEN, 0);
-        histogram.put(INTERVAL_ID_EIGHT, 0);
-        histogram.put(INTERVAL_ID_NINE, 0);
-        histogram.put(INTERVAL_ID_TEN, 0);
-        histogram.put(INTERVAL_ID_ELEVEN, 0);
 
         try{
-            if(presetPath == null){
-                System.out.println("Enter path:");
+            //set all intervals
+            intervals.add(new Interval(1, 10));
+            intervals.add(new Interval(11, 20));
+            intervals.add(new Interval(21, 30));
+            intervals.add(new Interval(31, 40));
+            intervals.add(new Interval(41, 50));
+            intervals.add(new Interval(51, 60));
+            intervals.add(new Interval(61, 70));
+            intervals.add(new Interval(71, 80));
+            intervals.add(new Interval(81, 90));
+            intervals.add(new Interval(91, 100));
+            intervals.add(new Interval(101, 200));
 
-                //getPathFromUser() is a method written in CountChars.java (exercise 6)
-                readFile(getPathFromUser());
+            if(args[0].length() > 0){
+                System.out.println("Path used: " + args[0]);
+                readFile(Paths.get(args[0]));
             }
-            //if a presetPath is set then that path will be used.
             else{
-                System.out.println("Preset path used.");
-                Path path = Paths.get(presetPath);
-
-                readFile(path);
+                throw new IllegalArgumentException("The path was not valid.");
             }
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.err.println("Argument to main was not found. Please provide a Path parameter to the program.");
         }
         catch (Exception e){
             System.err.println(e.getMessage());
@@ -75,7 +57,11 @@ public class Histogram {
         if(!Files.exists(path)){
             throw new FileNotFoundException("File was not found.");
         }
+        else if(Files.isDirectory(path)){
+            throw new IOException("The given path can NOT lead to a folder. It must be a specific file.");
+        }
         else{
+
 
             BufferedReader fileReader = new BufferedReader(new FileReader(path.toString()));
             String line = "";
@@ -84,7 +70,7 @@ public class Histogram {
 
                 line = fileReader.readLine();
                 if (line == null) {
-                    reader.close();
+                    fileReader.close();
                     break;
                 }
                 try{
@@ -106,58 +92,40 @@ public class Histogram {
         //Sort the ArrayList so when a number higher than 200 is noticed then the loop can be aborted.
         Collections.sort(numbers);
 
-        //loop that sorts all numbers and adds to the counter in which interval the number is located in
+        int amountBelowHundred = 0;
+        int amountAboveHundred = 0;
+
         for(int i : numbers){
-            if(i >= 1 && i <= 10){
-                histogram.put(INTERVAL_ID_ONE, histogram.get(INTERVAL_ID_ONE) + 1);
-            }
-            else if(i >= 11 && i <= 20){
-                histogram.put(INTERVAL_ID_TWO, histogram.get(INTERVAL_ID_TWO) + 1);
-            }
-            else if(i >= 21 && i <= 30){
-                histogram.put(INTERVAL_ID_THREE, histogram.get(INTERVAL_ID_THREE) + 1);
-            }
-            else if(i >= 31 && i <= 40){
-                histogram.put(INTERVAL_ID_FOUR, histogram.get(INTERVAL_ID_FOUR) + 1);
-            }
-            else if(i >= 41 && i <= 50){
-                histogram.put(INTERVAL_ID_FIVE, histogram.get(INTERVAL_ID_FIVE) + 1);
-            }
-            else if(i >= 51 && i <= 60){
-                histogram.put(INTERVAL_ID_SIX, histogram.get(INTERVAL_ID_SIX) + 1);
-            }
-            else if(i >= 61 && i <= 70){
-                histogram.put(INTERVAL_ID_SEVEN, histogram.get(INTERVAL_ID_SEVEN) + 1);
-            }
-            else if(i >= 71 && i <= 80){
-                histogram.put(INTERVAL_ID_EIGHT, histogram.get(INTERVAL_ID_EIGHT) + 1);
-            }
-            else if(i >= 81 && i <= 90){
-                histogram.put(INTERVAL_ID_NINE, histogram.get(INTERVAL_ID_NINE) + 1);
-            }
-            else if(i >= 91 && i <= 100){
-                histogram.put(INTERVAL_ID_TEN, histogram.get(INTERVAL_ID_TEN) + 1);
-            }
-            else if(i >= 101 && i <= 200){
-                histogram.put(INTERVAL_ID_ELEVEN, histogram.get(INTERVAL_ID_ELEVEN) + 1);
-            }
-            else if (i > 200){
+            //since the list is sorted, when i exceeds the highest interval value set, the loop can break.
+            if(i > Interval.getHighestIntervalValue()){
                 break;
             }
 
+            for(Interval interval: intervals){
+                //if the number is within the interval then it's count is increased and the loop is broken.
+                if(interval.isWithinInterval(i)){
+                    //adds to the interval count
+                    interval.addCount();
+
+                    //Counts the values within the 2 big intervals
+                    if(i <= 100){
+                        amountBelowHundred++;
+                    }
+                    else if(i <= Interval.getHighestIntervalValue()){
+                        amountAboveHundred++;
+                    }
+                    break;
+                }
+            }
         }
 
-        //loop that adds together all of the values in the LinkedMap.
-        int allValues = 0;
-        for(Map.Entry<String, Integer> entry: histogram.entrySet()){
-            allValues += entry.getValue();
-        }
-        System.out.println("Number of integers in the interval [1, 100]: " + (allValues - histogram.get(INTERVAL_ID_ELEVEN)));
-        System.out.println("Number of integers in the interval [101, 200]: " + histogram.get(INTERVAL_ID_ELEVEN));
+        //prints out the 2 big intervals
+        System.out.println("Number of integers in the interval [1,100]: "+ amountBelowHundred +
+                            "\nNumber of integers in the interval [101," + Interval.getHighestIntervalValue() + "]: " + amountAboveHundred);
 
-        //prints out the histogram.
-        for(Map.Entry<String, Integer> entry: histogram.entrySet()){
-            System.out.println(entry.getKey() + " | " + getStarsEqualToInt(entry.getValue()));
+        //loops out and prints the histogram
+        for(Interval interval: intervals){
+            System.out.println(interval.getLow() + " - " + interval.getHigh() + " : " + getStarsEqualToInt(interval.getCount()));
         }
 
     }

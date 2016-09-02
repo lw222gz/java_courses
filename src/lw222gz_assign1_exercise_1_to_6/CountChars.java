@@ -1,59 +1,45 @@
 package lw222gz_assign1_exercise_1_to_6;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Scanner;
+
 
 /**
  * Created by Lucas on 2016-08-26.
  */
 public class CountChars {
 
-    //change this string to wanted path for file to read.
-    //set to null if you want the app to ask for a path.
-    private static final String presetPath = null;//"C://Users/Lucas/Github/Java_assignments/LoremIpsum.txt";
+    //test path: "C://Users/Lucas/Github/Java_assignments/LoremIpsum.txt";
 
     private static BufferedReader fileReader;
-    private static Scanner reader = new Scanner(System.in);
 
     public static void main(String args[]){
-
-        //if a presetPath is not set then the user will be requested to enter a path
-        if(presetPath == null){
-            System.out.println("Enter path:");
-            readFile(getPathFromUser());
-        }
-        //if a presetPath is set then that path will be used.
-        else{
-            System.out.println("Preset path used.");
-            Path path = Paths.get(presetPath);
-
-            readFile(path);
-        }
-    }
-
-    //reads a file path from the user, the file path can not only be whitespace.
-    public static Path getPathFromUser(){
-        String str = "";
-        while(true){
-            str = reader.nextLine();
-            if(str.trim().length() > 0){
-                break;
+        try{
+            if(args[0].length() > 0){
+                System.out.println("Path used: " + args[0]);
+                readFile(Paths.get(args[0]));
             }
-            System.err.println("Please give a path input.");
+            else{
+                throw new IllegalArgumentException("The path was not valid.");
+            }
         }
-
-        return Paths.get(str);
+        catch(ArrayIndexOutOfBoundsException e){
+            System.err.println("Argument to main was not found. Please provide a Path parameter to the program.");
+        }
+        catch(Exception e){
+            System.err.println(e.getMessage());
+        }
     }
 
     //reads a .txt file with the given path and presents the wanted statistics
-    private static void readFile(Path path){
+    private static void readFile(Path path) throws IOException {
+        //checks that the file exists and that it's not a directory
         if(!Files.exists(path) || Files.isDirectory(path)){
-            System.err.println("Given file path was not found. \nFUNCTION ABORTED!");
-            return;
+            //if file was not found, throw an exception
+            throw new IOException("File was not found at the given path. \nFUNCTION ABORTED!");
         }
         else{
             System.out.println("File found.");
@@ -73,7 +59,7 @@ public class CountChars {
 
                 line = fileReader.readLine();
                 if(line == null){
-                    reader.close();
+                    fileReader.close();
                     break;
                 }
 
@@ -113,8 +99,8 @@ public class CountChars {
                 }
             }
         }
-        catch (Exception e){
-            System.err.println("An error occurred when trying to read the file. \n"+e.getMessage());
+        catch (IOException e){
+            throw new IOException("An error occurred when trying to read the file.");
         }
 
         //prints out result read from the given .txt

@@ -5,49 +5,33 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-import static lw222gz_assign1_exercise_1_to_6.CountChars.getPathFromUser;
-
 /**
  * Created by Lucas on 2016-08-27.
  */
 public class CountJava {
+    //test path: "C://Users/Lucas/Github/Java_assignments/src";
 
-    //preset path used for faster testing.
-    private static String presetPath = null;//"C://Users/Lucas/Github/Java_assignments/src";
-    private static Scanner reader = new Scanner(System.in);
-
-
-    //Using a HashMap would not work as if 2 files in different dirs have the same name the latter one would be overwritten.
-    //TODO: Would like to make a JavaFile class, am I allowed?
-    private static ArrayList<List> javaFiles = new ArrayList<List>();
-    private static ArrayList<String> javaFileNames = new ArrayList<String>();
-    private static ArrayList<Integer> javaFileLines = new ArrayList<Integer>();
+    //Using a HashMap would not work as if 2 files in different dirs have the same name one would be overwritten by the other.
+    //Therefore I created a class, JavaFile, to store the data.
+    private static ArrayList<JavaFile> javaFiles = new ArrayList<JavaFile>();
 
     //used to read number of lines in a file
     private static LineNumberReader lnr;
 
     public static void main(String args[]){
-
-        //ArrayList position 0 stores the file names, ArrayList position 1 stores the amount of lines for a file
-        javaFiles.add(javaFileNames);
-        javaFiles.add(javaFileLines);
-
-        System.out.println(Files.isDirectory(Paths.get("C://Users/Lucas/Github/Java_assignments/LoremIpsum.txt")));
-
         try{
-            if(presetPath == null){
-                System.out.println("Enter path:");
-
-                //getPathFromUser() is a method written in CountChars.java (exercise 6)
-                readFolder(getPathFromUser());
+            if(args[0].length() > 0){
+                System.out.println("Path used: " + args[0]);
+                readFolder(Paths.get(args[0]));
+                //after all the data has been gathered the result will be printed.
                 printResult();
             }
-            //if a presetPath is set then that path will be used.
             else{
-                System.out.println("Preset path used.");
-                readFolder(Paths.get(presetPath));
-                printResult();
+                throw new IllegalArgumentException("The path was not valid.");
             }
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.err.println("Argument to main was not found. Please provide a Path parameter to the program.");
         }
         catch (Exception e){
             System.err.println(e.getMessage());
@@ -62,13 +46,12 @@ public class CountJava {
             throw new FileNotFoundException("Folder was not found.");
             // && !(Files.isDirectory(path))
         }
+        else if(!Files.isDirectory(path)){
+            throw new IOException("Given path was not a folder.");
+        }
         else{
             File file = new File(path.toString());
 
-            //Checks that the file path is a directory.
-            if(!file.isDirectory()){
-                throw new IOException("Given path was not a folder.");
-            }
             //list all files in the directory
             File[] files = file.listFiles();
 
@@ -86,8 +69,9 @@ public class CountJava {
                         lnr.skip(Long.MAX_VALUE);
 
                         //save file data in the lists.
-                        javaFiles.get(1).add(lnr.getLineNumber() + 1); //line counting starts at 0 +1 is added
-                        javaFiles.get(0).add(f.getName());
+                        javaFiles.add(new JavaFile(f.getName(), lnr.getLineNumber() + 1));
+                        //javaFiles.get(1).add(lnr.getLineNumber() + 1); //line counting starts at 0 +1 is added
+                        //javaFiles.get(0).add(f.getName());
                         lnr.close();
                     }
                     catch (Exception e){
@@ -103,12 +87,16 @@ public class CountJava {
     private static void printResult(){
         System.out.println("Files found in given root directory and all of the sub-directories: ");
 
-        int sum = 0;
-        for(int i = 0; i < javaFiles.get(0).size(); i++){
-            System.out.println((i+1) + ". " + javaFiles.get(0).get(i) + "   lines = " + javaFiles.get(1).get(i));
-            sum += Integer.parseInt(javaFiles.get(1).get(i).toString());
+        int rowSum = 0;
+        int counter = 1;
+
+        for(JavaFile jf: javaFiles){
+            System.out.println((counter) + ". " + jf.getName() + "   lines = " + jf.getRows());
+
+            rowSum += jf.getRows();
+            counter++;
         }
 
-        System.out.println("Total amount of lines : " + sum);
+        System.out.println("Total amount of lines : " + rowSum);
     }
 }
