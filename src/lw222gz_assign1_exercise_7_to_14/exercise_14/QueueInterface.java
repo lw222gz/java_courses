@@ -1,10 +1,9 @@
-
+package lw222gz_assign1_exercise_7_to_14.exercise_14;
 /**
  * QueueInterface.java
  * Updated with exceptions 9 sep 2015
  */
 
-import java.util.Iterator;
 import java.lang.IndexOutOfBoundsException;
 
 

@@ -1,6 +1,7 @@
 package lw222gz_assign1_exercise_7_to_14.exercise_7;
 import java.util.*;
 
+
 /**
  * Created by Lucas on 2016-08-26.
  */
@@ -67,6 +68,13 @@ public class Arrays {
     //Example: param { 2,2,2,2,5,6,6,6,1,1,1,1} will return { 5,6,6,6,1,1,1,1,2,2,2,2}
     public int[] sort(int[] arr){
         int[] sortedArr = new int[arr.length];
+
+        //NOTE: Did i misunderstand this exercise? If so the code to sort an array
+        //based on the VALUES in the array is as the following out-commented code:
+        /*sortedArr = arr;
+        java.util.Arrays.sort(sortedArr);
+        return sortedArr;*/
+
 
         //key is the array element value, value is the occurrences of that value
         TreeMap<Integer,Integer> nrOfOccurrences = new TreeMap<>();

@@ -86,7 +86,7 @@ public class ArraysMain {
             System.out.println(arr.toString(arr.absDif(difArr1, diffArr2)));
 
             //This should throw an error and a proper message should be displayed.
-            System.out.println("\nIf the arrays don't have the same length, an error should be displayed.");
+            System.out.println("\nIf the arrays don't have the same length an error should be thrown.");
             System.out.println(arr.toString(myCorrectSubArr) + " - " + arr.toString(diffArr2) + " => ");
             System.out.println(arr.toString(arr.absDif(myCorrectSubArr, diffArr2)));
         }
