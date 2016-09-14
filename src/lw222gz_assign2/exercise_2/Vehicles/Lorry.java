@@ -8,19 +8,11 @@ import lw222gz_assign2.exercise_2.Passenger;
  */
 public class Lorry extends Vehicle{
 
-    public Lorry(Passenger[] passengers) throws IllegalArgumentException{
-
+    public Lorry(int amountOfPassengers) throws IllegalArgumentException{
+        super(8, 300, amountOfPassengers, 15);
         //A lorry must at least have 1 passenger, the driver. And for the sake of simplicity no one can tow a lorry today.
         if(passengers.length > 2 || passengers.length < 1){
             throw new IllegalArgumentException("A lorry can't have more than 2 or less than 1 passengers.");
         }
-
-        this.passengers = passengers;
-
-        //initial fee of 300 + 15 for each passenger
-        fee = 300 + this.passengers.length * 15;
-
-        //takes up the space of 2 buses, 2 x 20 = 40;
-        size = 40;
     }
 }
