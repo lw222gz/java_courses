@@ -29,7 +29,7 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
 
         int value = values[0];
 
-        //pushes all the remaning numbers to the left.
+        //pushes all the remaining numbers to the left.
         for(int i = 0; i < size; i++){
             values[i] = values[i + 1];
             values[i + 1] = 0;

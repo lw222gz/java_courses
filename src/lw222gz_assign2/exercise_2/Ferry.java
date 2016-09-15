@@ -2,8 +2,6 @@ package lw222gz_assign2.exercise_2;
 
 import lw222gz_assign2.exercise_2.Vehicles.Vehicle;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -57,7 +55,7 @@ public class Ferry implements IFerry {
             return;
         }
 
-        if(passengers.size() + v.getPassengers().length > MAX_AMOUNT_OF_PASSENGERS){
+        if(passengers.size() + v.getAmountOfPassengers() > MAX_AMOUNT_OF_PASSENGERS){
             System.err.println("There is not enough room for the passengers on this vehicle.");
             return;
         }

@@ -1,6 +1,5 @@
 package lw222gz_assign2.exercise_2.Vehicles;
 
-import lw222gz_assign2.exercise_2.Passenger;
 
 /**
  * Created by Lucas on 2016-09-13.

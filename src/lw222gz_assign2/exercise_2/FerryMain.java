@@ -1,8 +1,6 @@
 package lw222gz_assign2.exercise_2;
-
 import lw222gz_assign2.exercise_2.Vehicles.*;
 
-import java.beans.VetoableChangeListener;
 import java.util.Iterator;
 
 /**
@@ -112,17 +110,23 @@ public class FerryMain {
         //empty ferry
         ferry.disembark();
 
+        int amount_one = 4;
+        int amount_two = 1;
+        int amount_three = 0;
+        int amount_four = 16;
+        int amount_five = 1;
+
         ferry.embark(new Car(4));
         ferry.embark(new Car(1));
         ferry.embark(new Car(0));
-        ferry.embark(new Bicycle());
         ferry.embark(new Bus(16));
         ferry.embark(new Lorry(1));
         Iterator<Vehicle> it = ferry.iterator();
 
-        System.out.println("Prints out the amount of passengers in each vehicle. Should be 4, 1, 0, 1, 16, 1");
+        System.out.println("Prints out the amount of passengers in each vehicle. Should be "
+                + amount_one + ", " + amount_two + ", " + amount_three + ", " + amount_four + ", " + amount_five );
         while(it.hasNext()){
-            System.out.println(it.next().getPassengers().length);
+            System.out.println(it.next().getAmountOfPassengers());
         }
 
 
