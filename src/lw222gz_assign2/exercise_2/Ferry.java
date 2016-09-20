@@ -102,7 +102,7 @@ public class Ferry implements IFerry {
 
     // true if we can embark passenger p
     public boolean hasRoomFor(Passenger p){
-        if(passengers.size() + 1 <= MAX_AMOUNT_OF_PASSENGERS){
+        if(passengers.size() + 1 <= MAX_AMOUNT_OF_PASSENGERS && !passengers.contains(p)){
             return true;
         }
         return false;

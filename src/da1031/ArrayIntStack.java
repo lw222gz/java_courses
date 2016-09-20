@@ -11,13 +11,7 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
             resize();
         }
 
-        int[] temp = new int[values.length];
-        System.arraycopy(values, 0, temp, 0, values.length);
-
-        values[0] = n;
-        for(int i = 0; i < size; i++){
-            values[i + 1] = temp[i];
-        }
+        values[size] = n;
         size++;
     }
 
@@ -27,14 +21,7 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
             throw new IndexOutOfBoundsException("The stack is empty.");
         }
 
-        int value = values[0];
-
-        //pushes all the remaining numbers to the left.
-        for(int i = 0; i < size; i++){
-            values[i] = values[i + 1];
-            values[i + 1] = 0;
-        }
-
+        int value = values[size - 1];
         size--;
         return value;
     }
@@ -44,15 +31,6 @@ public class ArrayIntStack extends AbstractIntCollection implements IntStack {
         if(isEmpty()){
             throw new IndexOutOfBoundsException("The stack is empty.");
         }
-        return values[0];
+        return values[size - 1];
     }
-
-    /* Number of integers currently stored. */
-    //public int size();
-
-    /* Returns true if collection is empty. */
-    //public boolean isEmpty();
-
-    /* String of type "[ 7 56 -45 68 ... ]" */
-    //public String toString();
 }

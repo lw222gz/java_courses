@@ -85,6 +85,14 @@ public class FerryMain {
         ferry.embark(new Bus(20));
         System.out.println(ferry);
 
+
+        //Test 2.4
+        System.out.println("\nTest 2.4: Trying to add a passenger that has already boarded. Only one passenger should have been added since last print.");
+        p = new Passenger();
+        ferry.embark(p);
+        ferry.embark(p);
+        System.out.println(ferry);
+
         //Test 3
         System.out.println("\nTest 3: disembark, clear the ferry, keep the income.");
         ferry.disembark();
