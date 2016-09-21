@@ -1,6 +1,8 @@
-package lw222gz_assign2.exercise_5.exercise_5_3;
+package lw222gz_assign2.exercise_5.exercise_5_5;
 
 import lw222gz_assign2.exercise_5.exercise_5_2.Word;
+import lw222gz_assign2.exercise_5.exercise_5_4.HashWordSet;
+import lw222gz_assign2.exercise_5.exercise_5_4.TreeWordSet;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,14 +10,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.TreeSet;
 
 /**
- * Created by Lucas on 2016-09-20.
+ * Created by Lucas on 2016-09-21.
  */
-public class WordCount1Main {
+public class WordCount2Main {
 
     public static void main(String[] args){
         try{
@@ -34,13 +34,13 @@ public class WordCount1Main {
     }
 
 
-    private static void readFile(Path p) throws IOException{
+    private static void readFile(Path p) throws IOException {
         if(!Files.exists(p) || Files.isDirectory(p)){
             throw new IOException("The file was not found.");
         }
 
-        HashSet<Word> hashWords = new HashSet<Word>();
-        TreeSet<Word> treeWords = new TreeSet<Word>();
+        HashWordSet hashWords = new HashWordSet();
+        TreeWordSet treeWords = new TreeWordSet();
 
         try{
             BufferedReader reader = new BufferedReader(new FileReader(p.toString()));
@@ -56,18 +56,29 @@ public class WordCount1Main {
                 }
             }
 
+            //close reader
             reader.close();
 
-            Iterator<Word> it = treeWords.iterator();
+
+            Iterator<Word> it = hashWords.iterator();
 
             int counter = 1;
-            //prints out the words to test the alphabetic order
+            //Test the iterator in HashWordSet
             while(it.hasNext()){
                 System.out.println(counter + ". " + it.next());
                 counter++;
             }
 
-            //System.out.println(treeWords);
+
+            it = treeWords.iterator();
+
+            counter = 1;
+            //testing the iterator in TreeWordSet to display the words in alphabetic order
+            while(it.hasNext()){
+                System.out.println(counter + ". " + it.next());
+                counter++;
+            }
+
             //Prints out the sizes, according to the exercise description this should be 350 for both.
             System.out.println("Hash size : " + hashWords.size());
             System.out.println("Tree size : " + treeWords.size());
