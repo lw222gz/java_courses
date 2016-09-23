@@ -14,56 +14,62 @@ import static org.junit.Assert.*;
  */
 public class HashWordSetTest {
 
-    private HashWordSet hashSetTestObj;
+    private HashWordSet hwsTestObj;
     @Before
     public void setUp() throws Exception {
-        hashSetTestObj = new HashWordSet();
+        hwsTestObj = new HashWordSet();
     }
 
     //Since verifying that one method works requires the use of another
     //(Ex: after using .add(), .contains() must be used to see if that value was added)
     //I only made one big method for all tests
     @Test
-    public void HashWordSetTests(){
-        //Test 1.1: .add() and .contains(), testing to add a Word object and then make sure it was added.
-        Word w = new Word("LoremIpsum");
-        hashSetTestObj.add(w);
-        assertTrue(hashSetTestObj.contains(w));
+    public void hws_Tests(){
 
-        //Test 1.2: Adding several objects (forcing a resize of the bucket list) and check so that all elements are still contained.
+        //Test 1.1: .add() and .size(), testing so that a word object can be added to the HashWordSet
+        String value = "LoremIpsum";
+        Word b = new Word(value);
+        hwsTestObj.add(b);
+        assertEquals(1, hwsTestObj.size());
+
+        //Test 1.2: .add and .size(), testing so that 2 different word objects with the same value dont get both added.
+        Word c = new Word(value);
+        hwsTestObj.add(c);
+        assertEquals(1, hwsTestObj.size());
+
+
+        //Test 1.3: .add and .size(), Adding several objects (forcing a resize of the bucket list) and check so that all elements are still contained.
         Word[] words = new Word[] {new Word("Very"), new Word("unique"),
-                                new Word("Strings"), new Word("Be"),
-                                new Word("All"), new Word("Up"),
-                                new Word("In"), new Word("Here"),
-                                new Word("With"), new Word("These"),
-                                new Word("Awesome"), new Word("Tests"),
-                                new Word("That"), new Word("Are"),
-                                new Word("Being"), new Word("Preformed")};
+                new Word("Strings"), new Word("Be"),
+                new Word("All"), new Word("Up"),
+                new Word("In"), new Word("Here"),
+                new Word("With"), new Word("These"),
+                new Word("Awesome"), new Word("Tests"),
+                new Word("That"), new Word("Are"),
+                new Word("Being"), new Word("Preformed")};
 
         for(Word word : words){
-            hashSetTestObj.add(word);
+            hwsTestObj.add(word);
         }
 
-        for(Word word: words){
-            assertTrue(hashSetTestObj.contains(word));
-        }
+        assertEquals(words.length + 1, hwsTestObj.size());
 
-        //Test 1.3: .size(), testing to that the value size()
-        //returns has been properly updated throughout previous tests
-        //(+1 for test 1.1);
-        assertEquals(words.length + 1, hashSetTestObj.size());
+        //Test 1.4: .contains(), testing to add a Word object and then make sure it was added.
+        Word toFind = new Word("Hidden");
+        hwsTestObj.add(toFind);
+        assertTrue(hwsTestObj.contains(toFind));
 
 
-        //Test 1.4: .iterator(), testing so that the iterator provides the amount of elements
+        //Test 1.5: .iterator(), testing so that the iterator provides the amount of elements
         //that .size() represents
         int counter = 0;
-        Iterator<Word> it = hashSetTestObj.iterator();
+        Iterator<Word> it = hwsTestObj.iterator();
         while(it.hasNext()){
             it.next();
             counter++;
         }
 
-        assertEquals(counter, hashSetTestObj.size());
+        assertEquals(counter, hwsTestObj.size());
 
     }
 
