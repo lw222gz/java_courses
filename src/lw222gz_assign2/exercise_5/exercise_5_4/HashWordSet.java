@@ -101,9 +101,10 @@ public class HashWordSet implements WordSet {
         }
     }
 
-    //Dis needs to be tested mon
+    //Iterator for the bucket list
     private class HashWordSetIterator implements Iterator<Word>{
         private Node next = null;
+        private int bucketNumber = 0;
 
         public HashWordSetIterator(){
             //Identifies the first value
@@ -112,6 +113,7 @@ public class HashWordSet implements WordSet {
                     next = n;
                     break;
                 }
+                bucketNumber++;
             }
 
         }
@@ -119,24 +121,24 @@ public class HashWordSet implements WordSet {
         @Override
         public Word next(){
             Node n = next;
+            //Gets nodes at the current bucket number as long as nodes are still in that bucket
             if(next.next != null){
                 next = next.next;
             }
+            //Else time to move on to the next bucket number
             else {
                 //Starts looping through the buckets from the current node to find the next node.
-                for(int i = getBucketNumber(next.value) + 1; i < buckets.length; i++){
-                    if(buckets[i] != null){
-                        next = buckets[i];
+                for(bucketNumber = bucketNumber + 1; bucketNumber < buckets.length; bucketNumber++){
+                    //Will keep looping until a value is found
+                    if(buckets[bucketNumber] != null){
+                        next = buckets[bucketNumber];
                         break;
                     }
-                    //When the last index is reached the loop breaks and next is set to null to have hasNext() return false
-                    if(i >= buckets.length -1){
-                        next = null;
-                        break;
-                    }
+                    //when the loop ends, the entire bucket list has been looped and next will be null
+                    //so hasNext returns false.
+                    next = null;
                 }
             }
-
             return n.value;
         }
 

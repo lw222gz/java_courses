@@ -1,4 +1,7 @@
-package da1031;
+package lw222gz_assign2.exercise_1;
+
+import da1031.AbstractIntCollection;
+import da1031.IntList;
 
 /**
  * Created by Lucas on 2016-09-13.

@@ -19,7 +19,7 @@ public class WordCount2Main {
 
     public static void main(String[] args){
         try{
-            if(args[0].length() <= 0){
+            if(args.length == 0){
                 throw new IllegalArgumentException("Not a valid path was given as program parameter.");
             }
 
@@ -59,7 +59,7 @@ public class WordCount2Main {
             //close reader
             reader.close();
 
-
+            System.out.println("\nHash word set iteration.");
             Iterator<Word> it = hashWords.iterator();
 
             int counter = 1;
@@ -70,6 +70,7 @@ public class WordCount2Main {
             }
 
 
+            System.out.println("\nTree set iteration.");
             it = treeWords.iterator();
 
             counter = 1;
@@ -84,10 +85,9 @@ public class WordCount2Main {
             System.out.println("Tree size : " + treeWords.size());
 
 
-
         }
         catch(Exception e){
-            throw new IOException("Something went wrong when reading the file.");
+            throw new IOException(e.getCause());
         }
     }
 }

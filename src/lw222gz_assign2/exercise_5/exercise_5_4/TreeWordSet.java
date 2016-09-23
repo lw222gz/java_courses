@@ -19,7 +19,7 @@ public class TreeWordSet implements WordSet {
         return size;
     }
 
-    // Returns a string contaning all words in alphabetic order
+    // Returns a string containing all words in alphabetic order
     public String toString(){
         Iterator<Word> it = iterator();
 
@@ -113,54 +113,66 @@ public class TreeWordSet implements WordSet {
             }
             return true;
         }
+
+
+        //returns the node left most to the node this method is called on.
+        public BST getLeftMost(){
+            BST bst = this;
+            while(bst.left != null){
+                bst = bst.left;
+            }
+            return bst;
+        }
+
+        //returns the next lowest node after the one that it is called on.
+        //Ex: if values 5,6,7,8 are in the tree calling it on the node with value 5 returns 6 etc.
+        public BST getNextLowestNode(){
+            //If the current node has a right node linked to it, the next node
+            //to return is the left most node of that one or that node if it has no left nodes linked to it.
+           if(right != null){
+               return right.getLeftMost();
+           }
+           //Else we need to go back up in the tree
+           else{
+               BST bst = this;
+               //Loop that climbs back up.
+               //If parent isn't null and the parents right node is this one
+               //we can determine that we need to back up in the tree.
+               while(bst.parent != null && bst == bst.parent.right){
+                   bst = bst.parent;
+               }
+               return bst.parent;
+           }
+
+        }
     }
 
 
     private class TreeWordSetIterator implements Iterator<Word>{
-        private BST next;
+        private BST current;
 
         public TreeWordSetIterator(){
-            next = root;
-            if(next == null){
+            current = root;
+            if(current == null){
                 return;
             }
             //get the lowest node as initiation
-            while(next.left != null){
-                next = next.left;
-            }
+            current = current.getLeftMost();
         }
 
-        //SRC: http://stackoverflow.com/questions/12850889/in-order-iterator-for-binary-tree
+
+        //returns the next node
         @Override
         public Word next(){
-            BST r = next;
-
-            if(next.right != null){
-                next = next.right;
-                while(next.left != null){
-                    next = next.left;
-                }
-                return r.value;
-            }
-            else{
-                while(true){
-                    if(next.parent == null){
-                        next = null;
-                        return r.value;
-                    }
-                    if(next.parent.left == next){
-                        next = next.parent;
-                        return r.value;
-                    }
-                    next = next.parent;
-                }
-            }
-
+            BST bst = current;
+            current = current.getNextLowestNode();
+            return bst.value;
         }
 
+        //returns true as long as there are still nodes to iterate over.
         @Override
         public boolean hasNext(){
-            return next != null;
+            return current != null;
         }
     }
 }

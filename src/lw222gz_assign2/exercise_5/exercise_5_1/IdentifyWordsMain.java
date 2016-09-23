@@ -14,7 +14,7 @@ public class IdentifyWordsMain {
 
     public static void main(String[] args){
         try{
-            if(args[0].length() <= 0){
+            if(args.length == 0){
                 throw new IllegalArgumentException("Not a valid path was given as a program parameter.");
             }
             System.out.println("Path used: " + args[0]);

@@ -33,7 +33,7 @@ public class Word implements Comparable<Word> {
         return false;
     }
 
-    /* Implement Comparable */
+    /* compares this Word object to param @w Word object*/
     @Override
     public int compareTo(Word w) {
         return word.compareToIgnoreCase(w.toString());

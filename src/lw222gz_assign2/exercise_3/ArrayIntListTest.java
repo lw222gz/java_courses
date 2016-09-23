@@ -1,6 +1,6 @@
 package lw222gz_assign2.exercise_3;
 
-import da1031.ArrayIntList;
+import lw222gz_assign2.exercise_1.ArrayIntList;
 
 import static org.junit.Assert.*;
 
@@ -24,13 +24,13 @@ public class ArrayIntListTest {
     public void add() throws Exception {
         //Test List.1.1: Add a value and make sure it's added.
         listTestObj.add(42);
-        assertEquals(listTestObj.size(), 1);
+        assertEquals(1, listTestObj.size());
 
         //Test List.1.2: Extreme case of adding a lot of values.
         for(int i = 0; i < 100000; i++){
             listTestObj.add(i);
         }
-        assertEquals(listTestObj.size(), 100001);
+        assertEquals(100001, listTestObj.size());
     }
 
     @org.junit.Test
@@ -45,15 +45,15 @@ public class ArrayIntListTest {
 
         //Test List.2.1: so that the addAt has added the value by checking the size
         //Note: dependent on method add()
-        assertEquals(listTestObj.size(), 3);
+        assertEquals(3, listTestObj.size());
 
         //Test List.2.2: so that addAt has put the value at index 0
         //Note: dependent on method indexOf() and add()
-        assertEquals(listTestObj.indexOf(testValue), testIndex);
+        assertEquals(testIndex, listTestObj.indexOf(testValue));
 
         //Test List.2.3: testing so that the first value added has been pushed back one spot after the addAt
         //Note: dependent on method indexOf() and add()
-        assertEquals(listTestObj.indexOf(42), 1);
+        assertEquals(1, listTestObj.indexOf(42));
 
         //Test List.2.4: to throw an error, tries to add a value at an invalid position (-1), should throw an error
         //IndexOutOfBoundsException is expected to be thrown.
@@ -81,11 +81,11 @@ public class ArrayIntListTest {
         listTestObj.remove(0);
         //Test List.3.1: Testing so that the size has been reduced after an element removal
         //Note: dependent on method add()
-        assertEquals(listTestObj.size(), 2);
+        assertEquals(2, listTestObj.size());
 
         //Test List.3.2: Test so that the second element is now first since the first should have been removed.
         //Note: dependent on method add()
-        assertEquals(listTestObj.indexOf(valueTwo), 0);
+        assertEquals(0, listTestObj.indexOf(valueTwo));
 
         //Test List.3.3: Trying to remove at an index that does not exist.
         //IndexOutOfBoundsException is expected to be thrown.
@@ -104,7 +104,7 @@ public class ArrayIntListTest {
         listTestObj.add(42);
 
         //Test List.4.1: Testing the method to get the first value.
-        assertEquals(listTestObj.get(0), 42);
+        assertEquals(42, listTestObj.get(0));
 
         //reset the array before extreme case
         listTestObj = new ArrayIntList();
@@ -115,7 +115,7 @@ public class ArrayIntListTest {
             listTestObj.add(i);
         }
         for(int i = 0; i < 100000; i++){
-            assertEquals(listTestObj.get(i), i);
+            assertEquals(i, listTestObj.get(i));
         }
 
 

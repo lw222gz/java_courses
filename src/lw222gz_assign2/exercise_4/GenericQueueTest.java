@@ -27,19 +27,19 @@ public class GenericQueueTest {
     @Test
     public void size() throws Exception {
         //Test Queue.1.1: Tests to get size of empty queue.
-        assertEquals(queueTestObj.size(), 0);
+        assertEquals(0, queueTestObj.size());
 
         //Test Queue.1.2: Test to get the size of a queue with elements in it.
         //Note: dependent on enqueue method
         queueTestObj.enqueue("Hasta");
-        assertEquals(queueTestObj.size(), 1);
+        assertEquals(1, queueTestObj.size());
 
         //Test Queue.1.3: Extreme case, 10000 elements added.
         //Note: Dependent on enqueue() method
         for(int i= 0; i < 10000; i++){
             queueTestObj.enqueue("la vista");
         }
-        assertEquals(queueTestObj.size(), 10001);
+        assertEquals(10001, queueTestObj.size());
 
     }
 
@@ -59,14 +59,14 @@ public class GenericQueueTest {
         //Test Queue.3.1: Testing to add an element to the queue, then check so that it was added
         String value = "Did you know a bear has 42 teeth";
         queueTestObj.enqueue(value);
-        assertEquals(queueTestObj.size(), 1);
+        assertEquals(1, queueTestObj.size());
 
         //Test Queue.3.2: Extreme test, testing to add another 10000 elements
         for(int i = 0; i < 10000; i++){
             queueTestObj.enqueue("Did you know rabbits like licorice");
         }
 
-        assertEquals(queueTestObj.size(), 10001);
+        assertEquals(10001, queueTestObj.size());
 
     }
 
@@ -91,7 +91,7 @@ public class GenericQueueTest {
         queueTestObj.enqueue("Did you knowCoca-Cola originally contained cocaine");
         queueTestObj.enqueue("Did you knowKoalas sleep around 18 hours a day");
 
-        assertEquals(queueTestObj.dequeue(), first);
+        assertEquals(first, queueTestObj.dequeue());
 
         //Test Queue.4.3: Testing to see the reduction of of the queue size when dequeue'ing
         int currentSize = queueTestObj.size();
@@ -99,7 +99,7 @@ public class GenericQueueTest {
             throw new IllegalStateException("The current size of the queue must be higher than 0 for this test.");
         }
         queueTestObj.dequeue();
-        assertEquals(queueTestObj.size(), currentSize - 1);
+        assertEquals(currentSize - 1, queueTestObj.size());
     }
 
     @Test
@@ -121,7 +121,7 @@ public class GenericQueueTest {
         queueTestObj.enqueue("Did you know camel's milk doesn't curdle");
         queueTestObj.enqueue("Did you know a 1 minute kiss burns 26 calories");
 
-        assertEquals(queueTestObj.first(), first);
+        assertEquals(first, queueTestObj.first());
     }
 
     @Test
@@ -140,7 +140,7 @@ public class GenericQueueTest {
         //Note: Dependent on enqueue() method
         String element = "Did you know at birth dalmations are always white";
         queueTestObj.enqueue(element);
-        assertEquals(queueTestObj.last(), element);
+        assertEquals(element, queueTestObj.last());
 
         //Test Queue.6.3: Testing to get the last element in a queue with several elements
         //Note: Dependent on enqueue() method
@@ -148,7 +148,7 @@ public class GenericQueueTest {
         queueTestObj.enqueue("Did you know cows don't have upper front teeth");
         queueTestObj.enqueue("Did you know the brand Nokia is named after a place in Southern Finland");
         queueTestObj.enqueue(last);
-        assertEquals(queueTestObj.last(), last);
+        assertEquals(last, queueTestObj.last());
 
     }
 
@@ -189,6 +189,33 @@ public class GenericQueueTest {
             assertTrue(it.next() == myFacts[count]);
             count++;
         }
+    }
+
+
+    @Test
+    public void test_isQueueGeneric(){
+        //Testing to add different kind of data types to validate that the queue is generic.
+        try{
+            queueTestObj.enqueue(5);
+            queueTestObj.enqueue("Hello");
+            queueTestObj.enqueue('c');
+            queueTestObj.enqueue(false);
+            queueTestObj.enqueue(1.56);
+
+            class DummyClass{
+                String value;
+                public DummyClass(){
+                    value = "42";
+                }
+            }
+            queueTestObj.enqueue(new DummyClass());
+            assert(true);
+        }
+        catch (Exception e){
+            fail("Queue was not generic.");
+        }
+
+
     }
 
 }

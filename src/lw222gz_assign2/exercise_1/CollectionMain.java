@@ -1,6 +1,4 @@
-package da1031;
-
-import java.util.Iterator;
+package lw222gz_assign2.exercise_1;
 
 /**
  * Created by Lucas on 2016-09-13.
