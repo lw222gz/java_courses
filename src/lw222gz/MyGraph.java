@@ -23,7 +23,9 @@ public class MyGraph<E> implements DirectedGraph<E> {
     }
 
 
-
+    //Creates and returnes a node with @item as value
+    //if @item is null an exception is thrown
+    //returns the node created that represents value @item.
     @Override
     public MyNode<E> addNodeFor(E item) {
         if(item == null){
@@ -59,6 +61,9 @@ public class MyGraph<E> implements DirectedGraph<E> {
         }
     }
 
+    //Adds an edge between @from and @to
+    //If either values are null an exception is thrown
+    //returns true if the edge is created, otherwise false.
     @Override
     public boolean addEdgeFor(E from, E to) {
         if(from == null || to == null){
@@ -81,7 +86,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         return true;
     }
 
-    //TODO: use .equals and .hashcode() to compare equality
+    //TODO: are we supposed to use .equals / .hashcode to check
     @Override
     public boolean containsNodeFor(E item) {
         if(item == null){
@@ -90,14 +95,16 @@ public class MyGraph<E> implements DirectedGraph<E> {
         return item2node.containsKey(item);
     }
 
+    //Returns amount of current nodes
     @Override
     public int nodeCount() {
         return item2node.size();
     }
 
+    //Returns an iterator of the nodes
     @Override
     public Iterator<Node<E>> iterator() {
-        return new GraphIterator();
+        return new ArrayList<Node<E>>(item2node.values()).iterator();
     }
 
 
@@ -107,7 +114,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         return heads.iterator();
     }
 
-    //Retruns amount of heads
+    //Returns amount of heads
     @Override
     public int headCount() {
         return heads.size();
@@ -132,7 +139,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
     }
 
 
-
+    //Returns an integer representing the amount of edges in the graph
     @Override
     public int edgeCount() {
         int count = 0;
@@ -144,7 +151,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         return count;
     }
 
-    //
+    //Removes a node from the graph with the value of @item
     @Override
     public void removeNodeFor(E item) {
         if(item == null || !containsNodeFor(item)){
@@ -161,10 +168,12 @@ public class MyGraph<E> implements DirectedGraph<E> {
             tails.remove(n);
         }
 
-
         item2node.remove(item);
     }
 
+    //Checks if there is an edge between @from and @to,
+    //if either values are null an exception is thrown.
+    //If an edge between the 2 values is found true is returned, otherwise false.
     @Override
     public boolean containsEdgeFor(E from, E to) {
         if(from == null || to == null){
@@ -229,7 +238,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
 
             str += "\n\tnode [";
             str += "\n\t\tid " + n;
-            str += "\n\t\tlabel node_" + n;
+            //str += "\n\t\tlabel node_" + n;
             str += "\n\t]";
         }
 
@@ -247,7 +256,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
                 str += "\n\tedge [";
                 str += "\n\t\tsource " + n;
                 str += "\n\t\ttarget " + succN;
-                str += "\n\t\tlabel \"Edge from node_" + n + " to node_" + succN + " \"";
+                str += "\n\t\tlabel \"Edge from node " + n + " to node " + succN + " \"";
                 str += "\n\t]";
             }
         }
@@ -255,29 +264,5 @@ public class MyGraph<E> implements DirectedGraph<E> {
         str += "\n]";
 
         return str;
-    }
-
-
-
-
-    //Iterator class
-    //TODO: maby avoid the ugly code
-    @SuppressWarnings("unchecked cast")
-    private class GraphIterator implements Iterator<Node<E>>{
-        Iterator it;
-
-        public GraphIterator(){
-            it = item2node.values().iterator();
-        }
-
-        @Override
-        public Node<E> next(){
-            return (Node<E>)it.next();
-        }
-
-        @Override
-        public boolean hasNext(){
-            return it.hasNext();
-        }
     }
 }

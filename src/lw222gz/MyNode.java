@@ -15,6 +15,8 @@ public class MyNode<E> extends Node<E> {
     private Set<Node<E>> succs = new HashSet<Node<E>>();
 
 
+
+
     protected MyNode(E item) {
         super(item);
     }
@@ -46,6 +48,7 @@ public class MyNode<E> extends Node<E> {
      */
     @Override
     public Iterator<Node<E>> succsOf(){
+
         return succs.iterator();
     }
 
@@ -82,6 +85,7 @@ public class MyNode<E> extends Node<E> {
     protected void addSucc(Node succ){
         succs.add(succ);
     }
+
     /**
      * Removes node <tt>succ</tt> as a successor to <tt>this</tt> node.
      */
@@ -108,7 +112,6 @@ public class MyNode<E> extends Node<E> {
      * and predecessor, nodes to <tt>this</tt> node.
      */
     protected void disconnect(){
-        //TODO: remove connections to this node.
         for(Node n : preds){
             MyNode node = (MyNode)n;
             node.removeSucc(this);
