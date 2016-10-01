@@ -50,7 +50,6 @@ public class MyBFS<E> implements BFS<E> {
 
         LinkedHashSet<Node<E>> set = new LinkedHashSet<Node<E>>();
 
-
         while(it.hasNext()){
             Node n = (Node)it.next();
             list.add(n);
