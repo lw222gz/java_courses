@@ -11,13 +11,13 @@ import java.util.*;
  */
 public class MyGraph<E> implements DirectedGraph<E> {
 
-    private Map<E, MyNode<E>> item2node;
+    private Map<E, MyNode<E>> graphNodes;
     private Set<Node<E>> heads;
     private Set<Node<E>> tails;
 
 
     public MyGraph(){
-        item2node = new HashMap<E, MyNode<E>>();
+        graphNodes = new HashMap<E, MyNode<E>>();
         heads = new HashSet<Node<E>>();
         tails = new HashSet<Node<E>>();
     }
@@ -34,11 +34,11 @@ public class MyGraph<E> implements DirectedGraph<E> {
 
         //if the node exists, return the existing node
         if(containsNodeFor(item)){
-            return item2node.get(item);
+            return graphNodes.get(item);
         }
         //Else it will be added
         MyNode n = new MyNode(item);
-        item2node.put(item, n);
+        graphNodes.put(item, n);
         heads.add(n);
         tails.add(n);
         return n;
@@ -53,8 +53,8 @@ public class MyGraph<E> implements DirectedGraph<E> {
             throw new NullPointerException("Received null as value.");
         }
 
-        if(item2node.containsKey(item)){
-            return item2node.get(item);
+        if(graphNodes.containsKey(item)){
+            return graphNodes.get(item);
         }
         else{
             throw new NoSuchElementException("Element not found.");
@@ -92,19 +92,19 @@ public class MyGraph<E> implements DirectedGraph<E> {
         if(item == null){
             throw new NullPointerException("Received null as value.");
         }
-        return item2node.containsKey(item);
+        return graphNodes.containsKey(item);
     }
 
     //Returns amount of current nodes
     @Override
     public int nodeCount() {
-        return item2node.size();
+        return graphNodes.size();
     }
 
     //Returns an iterator of the nodes
     @Override
     public Iterator<Node<E>> iterator() {
-        return new ArrayList<Node<E>>(item2node.values()).iterator();
+        return new ArrayList<Node<E>>(graphNodes.values()).iterator();
     }
 
 
@@ -135,7 +135,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
     //Returns a list of all values
     @Override
     public List<E> allItems() {
-        return new ArrayList(item2node.keySet());
+        return new ArrayList(graphNodes.keySet());
     }
 
 
@@ -144,7 +144,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
     public int edgeCount() {
         int count = 0;
 
-        for(MyNode n : item2node.values()){
+        for(MyNode n : graphNodes.values()){
             count += n.inDegree();
         }
 
@@ -159,7 +159,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         }
 
         //Removes the node and all of its connections
-        MyNode n = item2node.get(item);
+        MyNode n = graphNodes.get(item);
         n.disconnect();
         if(n.isHead()){
             heads.remove(n);
@@ -168,7 +168,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
             tails.remove(n);
         }
 
-        item2node.remove(item);
+        graphNodes.remove(item);
     }
 
     //Checks if there is an edge between @from and @to,
@@ -230,11 +230,11 @@ public class MyGraph<E> implements DirectedGraph<E> {
     public String toString() {
         String str = "graph [\n";
 
-        Iterator it = iterator();
+        Iterator<Node<E>> it = iterator();
 
         //Node display
         while(it.hasNext()){
-            Node n = (Node)it.next();
+            Node n = it.next();
 
             str += "\n\tnode [";
             str += "\n\t\tid " + n;
@@ -247,11 +247,11 @@ public class MyGraph<E> implements DirectedGraph<E> {
         it = iterator();
 
         while(it.hasNext()){
-            Node n = (Node)it.next();
+            Node n = it.next();
 
-            Iterator succsIt = n.succsOf();
+            Iterator<Node<E>> succsIt = n.succsOf();
             while(succsIt.hasNext()){
-                Node succN = (Node)succsIt.next();
+                Node succN = succsIt.next();
 
                 str += "\n\tedge [";
                 str += "\n\t\tsource " + n;

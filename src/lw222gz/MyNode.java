@@ -93,6 +93,7 @@ public class MyNode<E> extends Node<E> {
     protected void removeSucc(Node succ){
         succs.remove(succ);
     }
+
     /**
      * Adds node <tt>pred</tt> as a predecessor to <tt>this</tt> node.
      */
@@ -100,6 +101,7 @@ public class MyNode<E> extends Node<E> {
     protected void addPred(Node pred){
         preds.add(pred);
     }
+
     /**
      * Removes node <tt>pred</tt> as a predecessor to <tt>this</tt> node.
      */
@@ -107,6 +109,7 @@ public class MyNode<E> extends Node<E> {
     protected void removePred(Node pred){
         preds.remove(pred);
     }
+
     /**
      * Disconnects this node from all adjacent nodes. That is, removes all successor,
      * and predecessor, nodes to <tt>this</tt> node.

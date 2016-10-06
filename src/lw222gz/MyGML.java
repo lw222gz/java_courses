@@ -21,7 +21,7 @@ public class MyGML<E> extends GML<E> {
     public String toGML() {
         String str = "graph [\n";
 
-        Iterator it = graph.iterator();
+        Iterator<Node<E>> it = graph.iterator();
 
         //Map<Integer, Integer> edges = new LinkedHashMap<Integer, Integer>();
 
@@ -29,7 +29,7 @@ public class MyGML<E> extends GML<E> {
 
         //Node display
         while(it.hasNext()){
-            Node n = (Node)it.next();
+            Node n = it.next();
 
             str += "\n\tnode [";
             str += "\n\t\tid " + id++;
@@ -41,11 +41,11 @@ public class MyGML<E> extends GML<E> {
         it = graph.iterator();
 
         while(it.hasNext()){
-            Node n = (Node)it.next();
+            Node n = it.next();
 
-            Iterator succsIt = n.succsOf();
+            Iterator<Node<E>> succsIt = n.succsOf();
             while(succsIt.hasNext()){
-                Node succN = (Node)succsIt.next();
+                Node succN = succsIt.next();
 
                 str += "\n\tedge [";
                 str += "\n\t\tsource " + n;
