@@ -11,12 +11,6 @@ import java.util.*;
  */
 public class MyBFS<E> implements BFS<E> {
 
-    private final int startCount = 0;
-    private int count;
-
-
-
-
     /**
      * Returns the nodes visited by a breadth-first search starting from
      * the given root node. Each visited node is also attached with
@@ -26,23 +20,25 @@ public class MyBFS<E> implements BFS<E> {
     public List<Node<E>> bfs(DirectedGraph<E> graph, Node<E> root) {
         LinkedHashSet<Node<E>> init = new LinkedHashSet<Node<E>>();
         HashSet<Node<E>> marked = new HashSet<Node<E>>();
-
-        init.add(root);
-        count = startCount;
-        marked.add(root);
-        root.num = count++;
         LinkedHashSet<Node<E>> list = new LinkedHashSet<Node<E>>();
-        bfs(init, list, marked);
 
-        return new ArrayList<Node<E>>(list);
+        //Marks and sets num value for the first root node.
+        init.add(root);
+        marked.add(root);
+        root.num = marked.size();
+
+        return new ArrayList<Node<E>>(bfs(init, new LinkedHashSet<Node<E>>(), marked));
     }
+
+
+
 
 
     //Algorithm for breadth-first search
     //@nodeSet is the set of nodes of the current level of the graph
-    //@list is the list the nodes are being added into
+    //@list should be a newly initiated list that will later be returned with the wanted values
     //@marked is the list containing all of the marked nodes.
-    private void bfs(LinkedHashSet<Node<E>> nodeSet, LinkedHashSet<Node<E>> list, HashSet<Node<E>> marked){
+    private LinkedHashSet<Node<E>> bfs(LinkedHashSet<Node<E>> nodeSet, LinkedHashSet<Node<E>> list, HashSet<Node<E>> marked){
         Iterator<Node<E>> it = nodeSet.iterator();
 
         LinkedHashSet<Node<E>> set = new LinkedHashSet<Node<E>>();
@@ -58,17 +54,18 @@ public class MyBFS<E> implements BFS<E> {
 
                 if(!marked.contains(node)){
                     marked.add(node);
-                    node.num = count++;
+                    node.num = marked.size();
                     set.add(node);
                 }
             }
         }
-
+        //If the next set size is 0 then there is no deeper level of the graph
         if(set.size() == 0){
-            return;
+            return list;
         }
         bfs(set, list, marked);
 
+        return list;
     }
 
     /**
@@ -81,7 +78,6 @@ public class MyBFS<E> implements BFS<E> {
         LinkedHashSet<Node<E>> init = new LinkedHashSet<Node<E>>();
         LinkedHashSet<Node<E>> list = new LinkedHashSet<Node<E>>();
         HashSet<Node<E>> marked = new HashSet<Node<E>>();
-        count = startCount;
 
         //If head nodes are found, iterate over them to find all nodes.
         if(graph.headCount() > 0){
@@ -91,10 +87,10 @@ public class MyBFS<E> implements BFS<E> {
                 Node n = it.next();
 
                 marked.add(n);
-                n.num = count++;
+                n.num = marked.size();
                 init.add(n);
 
-                bfs(init, list, marked);
+                list.addAll(bfs(init, new LinkedHashSet<Node<E>>(), marked));
 
                 init = new LinkedHashSet<Node<E>>();
             }
@@ -104,10 +100,9 @@ public class MyBFS<E> implements BFS<E> {
             Node n = graph.getNodeFor(graph.allItems().get(0));
             if(n != null){
                 init.add(n);
-                count = startCount;
                 marked.add(n);
-                n.num = count++;
-                bfs(init, list, marked);
+                n.num = marked.size();
+                list = (bfs(init, new LinkedHashSet<Node<E>>(), marked));
             }
 
         }

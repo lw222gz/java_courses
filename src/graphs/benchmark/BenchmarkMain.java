@@ -18,11 +18,11 @@ public class BenchmarkMain {
 		
 		//time += gbm.runGraphPerformance();
 		
-		//time += gbm.runDfsBfs();
+		time += gbm.runDfsBfs();
 		
 	    //time += gbm.runTransitiveClosure();
 	    
-	    time += gbm.runConnectedComponents();
+	    //time += gbm.runConnectedComponents();
 	    
 	    System.out.println("Total Time: "+time);
 	}

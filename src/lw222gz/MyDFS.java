@@ -20,33 +20,36 @@ public class MyDFS<E> implements DFS<E> {
      */
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph, Node<E> root) {
-
         count = 0;
-        return dfs(root);
+        return new ArrayList<Node<E>>(dfs(root));
     }
 
 
     //Returns a dfs list starting the search from Node @node
     //@node - Node that the search starts at
-    private List<Node<E>> dfs(Node<E> node){
+    private HashSet<Node<E>> dfs(Node<E> node){
         Stack<Node<E>> nodeStack = new Stack<Node<E>>();
-        HashSet<Node<E>> visited = new HashSet<Node<E>>();
 
-        ArrayList<Node<E>> nodeList = new ArrayList<Node<E>>();
+        LinkedHashSet<Node<E>> nodeList = new LinkedHashSet<Node<E>>();
 
         nodeStack.push(node);
-
+        //Non-recursive DFS
         while(!nodeStack.isEmpty()){
+            //Pop the first item in the stack
             Node n = nodeStack.pop();
-            if(visited.contains(n)){
+            //If this node has been visited skip this iteration
+            if(nodeList.contains(n)){
                 continue;
             }
-            visited.add(n);
-            n.num = count++;
-            nodeList.add(n);
 
+            //Add the node to the list and set it's num value
+            nodeList.add(n);
+            n.num = count++;
+
+            //Iterate over the succs and add them to the stack
             Iterator<Node<E>> succs = n.succsOf();
             while(succs.hasNext()){
+                //adds the next node to the top of the stack
                 nodeStack.push(succs.next());
             }
         }
@@ -78,7 +81,7 @@ public class MyDFS<E> implements DFS<E> {
         else{
             Node n = graph.getNodeFor(graph.allItems().get(0));
             if(n != null){
-                return (dfs(n));
+                return new ArrayList<Node<E>>(dfs(n));
             }
         }
 
@@ -109,10 +112,9 @@ public class MyDFS<E> implements DFS<E> {
     //Post order algorithm
     //@n, node to search from
     //@list, list value that will get the nodes added to the @list param
-    private void postOrder(Node<E> n, LinkedHashSet<Node<E>> list, HashSet<Node<E>> visited){
+    private LinkedHashSet<Node<E>> postOrder(Node<E> n, LinkedHashSet<Node<E>> list, HashSet<Node<E>> visited){
 
-        //Mark as visited. (The num value gets a value that it otherwise cannot get.)
-        //n.num = -1;
+        //Mark as visited.
         visited.add(n);
         Iterator<Node<E>> it = n.succsOf();
 
@@ -127,6 +129,8 @@ public class MyDFS<E> implements DFS<E> {
 
         n.num = count++;
         list.add(n);
+
+        return list;
     }
 
 
@@ -144,16 +148,18 @@ public class MyDFS<E> implements DFS<E> {
         HashSet<Node<E>> visited = new HashSet<Node<E>>();
         count = 0;
 
-        if(g.headCount() >0){
+        //If head nodes exists, iterate over those head nodes
+        if(g.headCount() > 0){
             Iterator<Node<E>> it = g.heads();
             while(it.hasNext()){
-                postOrder(it.next(), nodes, visited);
+                nodes.addAll(postOrder(it.next(), new LinkedHashSet<Node<E>>(), visited));
             }
         }
+        //else get a node and do a search on it instead (If no head nodes exist then all nodes are connected through succs).
         else{
             Node n = g.getNodeFor(g.allItems().get(0));
             if(n != null){
-                postOrder(n, nodes, visited);
+                nodes = postOrder(n, new LinkedHashSet<Node<E>>(), visited);
             }
         }
 
@@ -173,20 +179,22 @@ public class MyDFS<E> implements DFS<E> {
     @Override
     public List<Node<E>> postOrder(DirectedGraph<E> g, boolean attach_dfs_number) {
         LinkedHashSet<Node<E>> nodes = new LinkedHashSet<Node<E>>();
-        //ArrayList<Node<E>> nodes = new ArrayList<Node<E>>();
         HashSet<Node<E>> visited = new HashSet<Node<E>>();
         count = 0;
 
-        Iterator<Node<E>> it = g.heads();
+        if(g.headCount() > 0){
+            Iterator<Node<E>> it = g.heads();
 
-        while(it.hasNext()){
-            if(attach_dfs_number){
-                nodes.addAll(dfs(it.next()));
-            }
-            else{
-                postOrder(it.next(), nodes, visited);
+            while(it.hasNext()){
+                if(attach_dfs_number){
+                    nodes.addAll(dfs(it.next()));
+                }
+                else{
+                    nodes.addAll(postOrder(it.next(), new LinkedHashSet<Node<E>>(), visited));
+                }
             }
         }
+
 
         return new ArrayList<Node<E>>(nodes);
     }
@@ -204,7 +212,7 @@ public class MyDFS<E> implements DFS<E> {
 
         Iterator<Node<E>> it = graph.heads();
         while(it.hasNext()){
-            postOrder(it.next(), list, visited);
+            list.addAll(postOrder(it.next(), new LinkedHashSet<Node<E>>(), visited));
         }
 
         it = graph.iterator();
@@ -216,7 +224,7 @@ public class MyDFS<E> implements DFS<E> {
             Iterator<Node<E>> currIt = a.succsOf();
             while(currIt.hasNext()){
                 b = currIt.next();
-
+                //If the node being iterated over (a) has a succsessor (b) with a bigger num value, then the graph is cyclic
                 if(a.num <= b.num){
                     return true;
                 }
@@ -242,11 +250,10 @@ public class MyDFS<E> implements DFS<E> {
         Iterator<Node<E>> it = graph.heads();
 
         while(it.hasNext()){
-            Node node = it.next();
-            postOrder(node, list, visited);
+            list.addAll(postOrder(it.next(), new LinkedHashSet<Node<E>>(), visited));
         }
 
-        //Collections.reverse(list);
+        //topSort is a reversed post order
         ArrayList<Node<E>> nodeList = new ArrayList<Node<E>>(list);
         Collections.reverse(nodeList);
         return nodeList;

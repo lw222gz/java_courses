@@ -17,13 +17,12 @@ public class MyGML<E> extends GML<E> {
         super(dg);
     }
 
+    //Returns a GML string that will be abel to display the graph in yED
     @Override
     public String toGML() {
         String str = "graph [\n";
 
         Iterator<Node<E>> it = graph.iterator();
-
-        //Map<Integer, Integer> edges = new LinkedHashMap<Integer, Integer>();
 
         int id = 0;
 

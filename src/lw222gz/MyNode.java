@@ -11,10 +11,10 @@ import java.util.Set;
  */
 public class MyNode<E> extends Node<E> {
 
+    //Set of this node's predecessors
     private Set<Node<E>> preds = new HashSet<Node<E>>();
+    //Set of this node's successors
     private Set<Node<E>> succs = new HashSet<Node<E>>();
-
-
 
 
     protected MyNode(E item) {

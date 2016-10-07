@@ -73,6 +73,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         MyNode src = addNodeFor(from);
         MyNode tgt = addNodeFor(to);
 
+        //Checks if the edge already exists, if so then false is returned
         if(src.hasSucc(tgt)){
             return false;
         }
@@ -86,7 +87,8 @@ public class MyGraph<E> implements DirectedGraph<E> {
         return true;
     }
 
-    //TODO: are we supposed to use .equals / .hashcode to check
+    //Note: are we supposed to use .equals / .hashcode to check equality?
+    //returns true if @item node exists in the graph.
     @Override
     public boolean containsNodeFor(E item) {
         if(item == null){
@@ -192,7 +194,9 @@ public class MyGraph<E> implements DirectedGraph<E> {
 
 
     //Removes an edge that goes @from -> @to
-    //If the edge is not found
+    //If the edge is not found an exception is thrown
+    //If the nodes are not found or if there is no edge between the nodes then false is returned
+    //If the edge is successfully removed true is returned.
     @Override
     public boolean removeEdgeFor(E from, E to) {
         if(from == null || to == null){
@@ -206,6 +210,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
         MyNode src = getNodeFor(from);
         MyNode tgt = getNodeFor(to);
 
+        //Checks if the edge exists
         if(src.hasSucc(tgt)){
             src.removeSucc(tgt);
             tgt.removePred(src);
@@ -221,8 +226,8 @@ public class MyGraph<E> implements DirectedGraph<E> {
 
             return true;
         }
-        return false;
 
+        return false;
     }
 
     //Returns a string representation of the graph
@@ -238,7 +243,6 @@ public class MyGraph<E> implements DirectedGraph<E> {
 
             str += "\n\tnode [";
             str += "\n\t\tid " + n;
-            //str += "\n\t\tlabel node_" + n;
             str += "\n\t]";
         }
 
