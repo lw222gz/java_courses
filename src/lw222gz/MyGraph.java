@@ -23,7 +23,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
     }
 
 
-    //Creates and returnes a node with @item as value
+    //Creates and returns a node with @item as value
     //if @item is null an exception is thrown
     //returns the node created that represents value @item.
     @Override
@@ -154,6 +154,7 @@ public class MyGraph<E> implements DirectedGraph<E> {
     }
 
     //Removes a node from the graph with the value of @item
+    //If a node with the value of @item is not found an error is thrown.
     @Override
     public void removeNodeFor(E item) {
         if(item == null || !containsNodeFor(item)){
@@ -247,7 +248,6 @@ public class MyGraph<E> implements DirectedGraph<E> {
         }
 
         //Edge display
-
         it = iterator();
 
         while(it.hasNext()){

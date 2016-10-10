@@ -3,7 +3,6 @@ package lw222gz;
 import graphs.DFS;
 import graphs.DirectedGraph;
 import graphs.Node;
-
 import java.util.*;
 
 /**
@@ -20,14 +19,36 @@ public class MyDFS<E> implements DFS<E> {
      */
     @Override
     public List<Node<E>> dfs(DirectedGraph<E> graph, Node<E> root) {
-        count = 0;
-        return new ArrayList<Node<E>>(dfs(root));
+        return new ArrayList<Node<E>>(dfs(root, new LinkedHashSet<Node<E>>()));
+    }
+
+    private LinkedHashSet<Node<E>> dfs(Node<E> node, LinkedHashSet<Node<E>> list){
+        //--ASSIGNMENT 3 DFS--
+        //O(N + E) Where N is the amount of nodes that can be reached from @root by successors, E is the amount of edges
+        //Motivation: the loop length is determined by the amount of nodes that can be reached through successors
+        //And the edges found between those nodes
+        //--ASSIGNMENT 3 DFS--
+        list.add(node);
+        node.num = list.size();
+
+        Iterator<Node<E>> it = node.succsOf();
+        while(it.hasNext()){
+            Node<E> n = it.next();
+            if(!list.contains(n)){
+                dfs(n, list);
+            }
+        }
+
+        return list;
     }
 
 
     //Returns a dfs list starting the search from Node @node
     //@node - Node that the search starts at
-    private HashSet<Node<E>> dfs(Node<E> node){
+    /*private HashSet<Node<E>> non_recursive_dfs(Node<E> node){
+
+
+
         Stack<Node<E>> nodeStack = new Stack<Node<E>>();
 
         LinkedHashSet<Node<E>> nodeList = new LinkedHashSet<Node<E>>();
@@ -46,7 +67,7 @@ public class MyDFS<E> implements DFS<E> {
             nodeList.add(n);
             n.num = count++;
 
-            //Iterate over the succs and add them to the stack
+            //Iterate over the successors and add them to the stack
             Iterator<Node<E>> succs = n.succsOf();
             while(succs.hasNext()){
                 //adds the next node to the top of the stack
@@ -56,7 +77,7 @@ public class MyDFS<E> implements DFS<E> {
 
         return nodeList;
 
-    }
+    }*/
 
 
     /**
@@ -68,24 +89,24 @@ public class MyDFS<E> implements DFS<E> {
     public List<Node<E>> dfs(DirectedGraph<E> graph) {
         LinkedHashSet<Node<E>> nodes = new LinkedHashSet<Node<E>>();
         count = 0;
-        ArrayList<Node<E>> list = new ArrayList<Node<E>>();
+        LinkedHashSet<Node<E>> list = new LinkedHashSet<Node<E>>();
 
         //If there exists heads in the current graph
         if(graph.headCount() > 0){
             Iterator<Node<E>> it = graph.heads();
             while(it.hasNext()){
-                list.addAll(dfs(it.next()));
+                list.addAll(dfs(it.next(), list));
             }
         }
         //Else do a dfs on the top item.
         else{
             Node n = graph.getNodeFor(graph.allItems().get(0));
             if(n != null){
-                return new ArrayList<Node<E>>(dfs(n));
+                list = dfs(n, list);
             }
         }
 
-        return list;
+        return new ArrayList<Node<E>>(list);
     }
 
 
@@ -187,7 +208,7 @@ public class MyDFS<E> implements DFS<E> {
 
             while(it.hasNext()){
                 if(attach_dfs_number){
-                    nodes.addAll(dfs(it.next()));
+                    nodes.addAll(dfs(it.next(), new LinkedHashSet<Node<E>>()));
                 }
                 else{
                     nodes.addAll(postOrder(it.next(), new LinkedHashSet<Node<E>>(), visited));
@@ -221,9 +242,9 @@ public class MyDFS<E> implements DFS<E> {
         while(it.hasNext()){
 
             a = it.next();
-            Iterator<Node<E>> currIt = a.succsOf();
-            while(currIt.hasNext()){
-                b = currIt.next();
+            Iterator<Node<E>> succs = a.succsOf();
+            while(succs.hasNext()){
+                b = succs.next();
                 //If the node being iterated over (a) has a succsessor (b) with a bigger num value, then the graph is cyclic
                 if(a.num <= b.num){
                     return true;

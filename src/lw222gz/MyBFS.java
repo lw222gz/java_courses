@@ -36,7 +36,7 @@ public class MyBFS<E> implements BFS<E> {
 
     //Algorithm for breadth-first search
     //@nodeSet is the set of nodes of the current level of the graph
-    //@list should be a newly initiated list that will later be returned with the wanted values
+    //@list a LinkedHashSet that will get all the values from the search added to it and is returned when the values are added
     //@marked is the list containing all of the marked nodes.
     private LinkedHashSet<Node<E>> bfs(LinkedHashSet<Node<E>> nodeSet, LinkedHashSet<Node<E>> list, HashSet<Node<E>> marked){
         Iterator<Node<E>> it = nodeSet.iterator();
@@ -47,10 +47,10 @@ public class MyBFS<E> implements BFS<E> {
             Node n = it.next();
             list.add(n);
 
-            Iterator<Node<E>> succIt = n.succsOf();
-            while(succIt.hasNext()){
+            Iterator<Node<E>> succs = n.succsOf();
+            while(succs.hasNext()){
 
-                Node node = succIt.next();
+                Node node = succs.next();
 
                 if(!marked.contains(node)){
                     marked.add(node);

@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class MyTransitiveClosure<E> implements TransitiveClosure<E> {
 
-
+    private MyDFS<E> dfs = new MyDFS<E>();
 
 
     //Returns a Map containing a node as key and a Collection<Node<E>> as value,
@@ -20,15 +20,11 @@ public class MyTransitiveClosure<E> implements TransitiveClosure<E> {
     public Map<Node<E>, Collection<Node<E>>> computeClosure(DirectedGraph<E> dg) {
         HashMap<Node<E>, Collection<Node<E>>> map = new HashMap<Node<E>, Collection<Node<E>>>();
 
-        MyDFS<E> dfs = new MyDFS<E>();
+        //Iterates over all the nodes
+        dg.iterator().forEachRemaining(nextNode -> {
+            map.put(nextNode, dfs.dfs(dg, nextNode));
+        });
 
-        Iterator<Node<E>> it = dg.iterator();
-
-        //Iterates over all the
-        while(it.hasNext()){
-            Node n = it.next();
-            map.put(n, dfs.dfs(dg, n));
-        }
         return map;
     }
 
