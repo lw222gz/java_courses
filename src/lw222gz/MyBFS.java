@@ -40,19 +40,17 @@ public class MyBFS<E> implements BFS<E> {
     //@marked is the list containing all of the marked nodes.
     private LinkedHashSet<Node<E>> bfs(LinkedHashSet<Node<E>> nodeSet, LinkedHashSet<Node<E>> list, HashSet<Node<E>> marked){
         Iterator<Node<E>> it = nodeSet.iterator();
-
         LinkedHashSet<Node<E>> set = new LinkedHashSet<Node<E>>();
 
-        while(it.hasNext()){
+        while(it.hasNext()){ //O(N)
             Node n = it.next();
             list.add(n);
 
             Iterator<Node<E>> succs = n.succsOf();
-            while(succs.hasNext()){
-
+            while(succs.hasNext()){ //O(E)
                 Node node = succs.next();
 
-                if(!marked.contains(node)){
+                if(!marked.contains(node)){ //O(1)
                     marked.add(node);
                     node.num = marked.size();
                     set.add(node);
@@ -63,9 +61,9 @@ public class MyBFS<E> implements BFS<E> {
         if(set.size() == 0){
             return list;
         }
-        bfs(set, list, marked);
+        bfs(set, list, marked); //
 
-        return list;
+        return list; //O(N + E)
     }
 
     /**
@@ -83,14 +81,14 @@ public class MyBFS<E> implements BFS<E> {
         if(graph.headCount() > 0){
             Iterator<Node<E>> it = graph.heads();
 
-            while(it.hasNext()){
+            while(it.hasNext()){ //O(N)
                 Node n = it.next();
 
-                marked.add(n);
+                marked.add(n); //O(1) http://stackoverflow.com/questions/559839/big-o-summary-for-java-collections-framework-implementations
                 n.num = marked.size();
-                init.add(n);
+                init.add(n); //O(1)
 
-                list.addAll(bfs(init, new LinkedHashSet<Node<E>>(), marked));
+                list = bfs(init, new LinkedHashSet<Node<E>>(), marked); //O(N+E)
 
                 init = new LinkedHashSet<Node<E>>();
             }
@@ -102,11 +100,11 @@ public class MyBFS<E> implements BFS<E> {
                 init.add(n);
                 marked.add(n);
                 n.num = marked.size();
-                list = (bfs(init, new LinkedHashSet<Node<E>>(), marked));
+                list = bfs(init, new LinkedHashSet<Node<E>>(), marked);
             }
 
         }
-
+        //O(N) + O(N+E)
         return new ArrayList<Node<E>>(list);
     }
 }

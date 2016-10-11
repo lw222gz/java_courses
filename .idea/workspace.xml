@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="256c9cfd-54f1-4399-a10f-26fa815fcf1b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz/MyConnectedComponents.class" afterPath="$PROJECT_DIR$/out/production/Java_assignments/lw222gz/MyConnectedComponents.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" afterPath="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz/MyBFS.java" afterPath="$PROJECT_DIR$/src/lw222gz/MyBFS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java" afterPath="$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz/MyDFS.java" afterPath="$PROJECT_DIR$/src/lw222gz/MyDFS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz/MyGraph.java" afterPath="$PROJECT_DIR$/src/lw222gz/MyGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lw222gz/MyTransitiveClosure.java" afterPath="$PROJECT_DIR$/src/lw222gz/MyTransitiveClosure.java" />
     </list>
     <ignored path="2DV600.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,23 +33,23 @@
       <file leaf-file-name="MyGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lw222gz/MyGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3995">
+            <state relative-caret-position="3927">
               <caret line="249" column="22" selection-start-line="249" selection-start-column="22" selection-end-line="249" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lw222gz/MyNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1087">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#2698#2699#0" expanded="false" />
+                <element signature="e#2738#2739#0" expanded="false" />
+                <element signature="e#2834#2835#0" expanded="false" />
+                <element signature="e#2911#2912#0" expanded="false" />
+                <element signature="e#3006#3007#0" expanded="false" />
+                <element signature="e#3045#3046#0" expanded="false" />
+                <element signature="e#3119#3120#0" expanded="false" />
+                <element signature="e#3154#3155#0" expanded="false" />
+                <element signature="e#3237#3238#0" expanded="false" />
+                <element signature="e#3276#3277#0" expanded="false" />
+                <element signature="e#3350#3351#0" expanded="false" />
+                <element signature="e#3385#3386#0" expanded="false" />
+                <element signature="e#3467#3468#0" expanded="false" />
+                <element signature="e#3524#3525#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -60,8 +58,8 @@
       <file leaf-file-name="MyConnectedComponents.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-305">
-              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+            <state relative-caret-position="683">
+              <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,13 +70,14 @@
       <file leaf-file-name="MyDFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lw222gz/MyDFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1480">
-              <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+            <state relative-caret-position="646">
+              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2817#2826#0" expanded="true" />
-                <marker date="1476106357740" expanded="false" signature="1539:1548" ph="&lt;~&gt;" />
-                <marker date="1476106357740" expanded="false" signature="1612:1621" ph="&lt;~&gt;" />
+                <element signature="e#516#517#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#2944#2953#0" expanded="true" />
+                <marker date="1476200090328" expanded="false" signature="1590:1599" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
@@ -87,7 +86,7 @@
       <file leaf-file-name="MyTransitiveClosure.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lw222gz/MyTransitiveClosure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="408">
               <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -99,7 +98,7 @@
       <file leaf-file-name="DFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphs/DFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
+            <state relative-caret-position="564">
               <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="84" selection-end-column="7" />
               <folding />
             </state>
@@ -116,11 +115,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BenchmarkMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BenchmarkMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="272">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeComplexity.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lw222gz/TimeComplexity.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -129,8 +138,8 @@
       <file leaf-file-name="MyBFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lw222gz/MyBFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="100" selection-start-line="38" selection-start-column="100" selection-end-line="38" selection-end-column="100" />
+            <state relative-caret-position="731">
+              <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,9 +150,12 @@
       <file leaf-file-name="TestDFS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="1666">
               <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#9777#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lw222gz_assign2/exercise_2/Vehicles/Bicycle.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign2/exercise_2/Vehicles/Car.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign2/exercise_2/Vehicles/Bus.java" />
         <option value="$PROJECT_DIR$/src/lw222gz_assign2/exercise_2/Vehicles/Lorry.java" />
@@ -215,12 +226,13 @@
         <option value="$PROJECT_DIR$/src/lw222gz/MyGML.java" />
         <option value="$PROJECT_DIR$/src/lw222gz/MyNode.java" />
         <option value="$PROJECT_DIR$/src/graphs/test/GraphGenerator.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java" />
         <option value="$PROJECT_DIR$/src/lw222gz/MyGraph.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz/MyBFS.java" />
-        <option value="$PROJECT_DIR$/src/lw222gz/MyDFS.java" />
         <option value="$PROJECT_DIR$/src/lw222gz/MyTransitiveClosure.java" />
         <option value="$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz/MyBFS.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz/MyDFS.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java" />
+        <option value="$PROJECT_DIR$/src/lw222gz/TimeComplexity.txt" />
       </list>
     </option>
   </component>
@@ -263,6 +275,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,8 +391,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -912,7 +924,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program/Java/jdk1.8.0_101/src.zip!/java/lang/Math.java" />
     <entry file="jar://C:/Program/Java/jdk1.8.0_101/src.zip!/java/lang/String.java" />
     <entry file="jar://C:/Program/Java/jdk1.8.0_101/jre/lib/rt.jar!/sun/misc/Launcher.class" />
     <entry file="jar://C:/Program/Java/jdk1.8.0_101/src.zip!/java/lang/ClassLoader.java" />
@@ -1123,29 +1134,85 @@
         <state relative-caret-position="136">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz/MyNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1087">
+        <state relative-caret-position="255">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="false" />
+            <element signature="e#446#447#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz/MyGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3995">
+        <state relative-caret-position="3927">
           <caret line="249" column="22" selection-start-line="249" selection-start-column="22" selection-end-line="249" selection-end-column="22" />
+          <folding>
+            <element signature="e#2698#2699#0" expanded="false" />
+            <element signature="e#2738#2739#0" expanded="false" />
+            <element signature="e#2834#2835#0" expanded="false" />
+            <element signature="e#2911#2912#0" expanded="false" />
+            <element signature="e#3006#3007#0" expanded="false" />
+            <element signature="e#3045#3046#0" expanded="false" />
+            <element signature="e#3119#3120#0" expanded="false" />
+            <element signature="e#3154#3155#0" expanded="false" />
+            <element signature="e#3237#3238#0" expanded="false" />
+            <element signature="e#3276#3277#0" expanded="false" />
+            <element signature="e#3350#3351#0" expanded="false" />
+            <element signature="e#3385#3386#0" expanded="false" />
+            <element signature="e#3467#3468#0" expanded="false" />
+            <element signature="e#3524#3525#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9777#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz/MyBFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lw222gz/MyDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#2944#2953#0" expanded="true" />
+            <marker date="1476200090328" expanded="false" signature="1590:1599" ph="&lt;~&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,56 +1226,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphs/DFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
+        <state relative-caret-position="564">
           <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="84" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz/MyBFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="100" selection-start-line="38" selection-start-column="100" selection-end-line="38" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz/MyConnectedComponents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-305">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+        <state relative-caret-position="683">
+          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/test/TestDFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lw222gz/MyDFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1480">
-          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2817#2826#0" expanded="true" />
-            <marker date="1476106357740" expanded="false" signature="1539:1548" ph="&lt;~&gt;" />
-            <marker date="1476106357740" expanded="false" signature="1612:1621" ph="&lt;~&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lw222gz/MyTransitiveClosure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="408">
           <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1216,10 +1252,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/benchmark/BenchmarkMain.java">
+    <entry file="file://$PROJECT_DIR$/src/lw222gz/TimeComplexity.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding />
         </state>
       </provider>

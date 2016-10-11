@@ -27,7 +27,7 @@ public class MyConnectedComponents<T> implements ConnectedComponents<Integer> {
      */
     @Override
     public Collection<Collection<Node<Integer>>> computeComponents(DirectedGraph<Integer> dg) {
-        MyDFS dfs = new MyDFS();
+        MyDFS dfs = new MyDFS(); //O(1)
 
         Collection<Collection<Node<Integer>>> collection = new ArrayList<Collection<Node<Integer>>>();
         LinkedHashSet<Node<Integer>> currentCollection;
@@ -41,37 +41,38 @@ public class MyConnectedComponents<T> implements ConnectedComponents<Integer> {
 
         Iterator<Node<Integer>> it = dg.iterator();
 
-        while(it.hasNext()){
+        while(it.hasNext()){ //O(N) Where N is the amount of nodes
             Node n = it.next();
 
             //Resets the current collection for the new iteartion
             currentCollection = new LinkedHashSet<Node<Integer>>();
 
-            if(!visited.containsKey(n)){
+            if(!visited.containsKey(n)){ //O(1) src: http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html
                 connectionFound = false;
 
-                visited.put(n, currentCollection);
+                visited.put(n, currentCollection); //O(1) src: http://docs.oracle.com/javase/6/docs/api/java/util/HashMap.html
+
                 //do a dfs search on the current node and save all the nodes found in the current collection
-                currentCollection = new LinkedHashSet<Node<Integer>>(dfs.dfs(dg, n));
-                for(Node node : currentCollection){
+                currentCollection = new LinkedHashSet<Node<Integer>>(dfs.dfs(dg, n)); //O(N+E)
+                for(Node node : currentCollection){ //O(N)
                     //Checks if the node has been added to the marked list, if not then it's added
-                    if(!visited.containsKey(node)){
-                        visited.put(node, currentCollection);
+                    if(!visited.containsKey(node)){ //O(1)
+                        visited.put(node, currentCollection); //O(1)
                     }
                     else if(node != n){
                         //Give linkedSet the value to the Set the connected node is in
-                        linkedSet = visited.get(node);
+                        linkedSet = visited.get(node); //O(1)
                         connectionFound = true;
                     }
                 }
 
                 //If a connection was not found then the collection will be added as a new collection
                 if(!connectionFound){
-                    collection.add(currentCollection);
+                    collection.add(currentCollection); //O(1)
                 }
                 //else if a connection was found the nodes are added to that collection
                 else{
-                    linkedSet.addAll(currentCollection);
+                    linkedSet.addAll(currentCollection); //O(N)
                 }
             }
         }

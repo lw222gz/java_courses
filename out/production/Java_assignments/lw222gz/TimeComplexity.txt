@@ -1,0 +1,14 @@
+--ASSIGNMENT 3 DFS and BFS--
+O(N + E) Where N is the amount amount of nodes and E is the amount of edges
+Motivation: the loop length is determined by the amount of nodes that can be reached from the root node.
+The loop will only visit a node once and never cross the same edge more than once.
+
+
+--ASSIGNMENT 3 Transitive Closure--
+O(N^2+N*E) Where N is the amount of nodes and E is the amount of edges
+Motivation: Since a DFS search is being made on each node (which takes O(N+E) time) we can draw the conclusion
+of N * (N+E) which can be shortened down to O(N^2 + N*E)
+
+--ASSIGNMENT 3 Connected Components--
+O((N^2+N*E) + N) where N is the amount of Nodes and E is the amount of edges
+Motivation:
