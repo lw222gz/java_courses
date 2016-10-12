@@ -42,7 +42,7 @@ public class MyBFS<E> implements BFS<E> {
         Iterator<Node<E>> it = nodeSet.iterator();
         LinkedHashSet<Node<E>> set = new LinkedHashSet<Node<E>>();
 
-        while(it.hasNext()){ //O(N)
+        while(it.hasNext()){ //O(N) is the time complexity for all it runs over all the recursive calls.
             Node n = it.next();
             list.add(n);
 
@@ -61,10 +61,12 @@ public class MyBFS<E> implements BFS<E> {
         if(set.size() == 0){
             return list;
         }
-        bfs(set, list, marked); //
+        bfs(set, list, marked);
 
-        return list; //O(N + E)
+        return list;
     }
+
+
 
     /**
      * Returns the nodes visited by a breadth first search starting from
@@ -81,14 +83,15 @@ public class MyBFS<E> implements BFS<E> {
         if(graph.headCount() > 0){
             Iterator<Node<E>> it = graph.heads();
 
-            while(it.hasNext()){ //O(N)
+            while(it.hasNext()){ //O(1)
                 Node n = it.next();
 
-                marked.add(n); //O(1) http://stackoverflow.com/questions/559839/big-o-summary-for-java-collections-framework-implementations
+                marked.add(n); //O(1)
                 n.num = marked.size();
                 init.add(n); //O(1)
 
-                list = bfs(init, new LinkedHashSet<Node<E>>(), marked); //O(N+E)
+                //Note: Technically list = bfs(..) is not needed but it makes the code easier to read.
+                list = bfs(init, list, marked); //O(N+E)
 
                 init = new LinkedHashSet<Node<E>>();
             }

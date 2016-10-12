@@ -21,8 +21,8 @@ public class MyTransitiveClosure<E> implements TransitiveClosure<E> {
         HashMap<Node<E>, Collection<Node<E>>> map = new HashMap<Node<E>, Collection<Node<E>>>();
 
         //Iterates over all the nodes
-        dg.iterator().forEachRemaining(nextNode -> {
-            map.put(nextNode, dfs.dfs(dg, nextNode));
+        dg.iterator().forEachRemaining(nextNode -> { //O(N)
+            map.put(nextNode, dfs.dfs(dg, nextNode)); //O(N+E) (this is for the dfs call)
         });
 
         return map;

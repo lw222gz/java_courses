@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class MyDFS<E> implements DFS<E> {
 
-    //private List<Node<E>> nodes;
     private int count;
+
     /**
      * Returns the nodes visited by a depth first search starting from
      * the given root node. Each visited node is also attached with
@@ -48,21 +48,19 @@ public class MyDFS<E> implements DFS<E> {
         return dfs(node, visited, new ArrayList<Node<E>>());
     }
 
+    //Non-recursive DFS
     //Returns a dfs list starting the search from Node @node
     //@node - Node that the search starts at
     private ArrayList<Node<E>> dfs(Node<E> node, HashSet<Node<E>> visited, ArrayList<Node<E>> list){
         Stack<Node<E>> nodeStack = new Stack<Node<E>>();
-        //LinkedHashSet<Node<E>> nodeQueue = new LinkedHashSet<Node<E>>();
-        //http://stackoverflow.com/questions/559839/big-o-summary-for-java-collections-framework-implementations
-        //ArrayList<Node<E>> list = list;
-
         nodeStack.push(node);
-        //Non-recursive DFS
-        while(!nodeStack.isEmpty()){
+
+        while(!nodeStack.isEmpty()){ //O(N)
             //Pop the first item in the stack
-            Node n = nodeStack.pop();
+            Node n = nodeStack.pop(); //O(1) src: http://stackoverflow.com/questions/7294634/what-are-the-time-complexities-of-various-data-structures
             //If this node has been visited skip this iteration
-            if(visited.contains(n)){
+            //This will skip over iterations of nodes that already have been visited
+            if(visited.contains(n)){ //O(1)
                 continue;
             }
 
@@ -73,9 +71,9 @@ public class MyDFS<E> implements DFS<E> {
 
             //Iterate over the successors and add them to the stack
             Iterator<Node<E>> succs = n.succsOf();
-            while(succs.hasNext()){
+            while(succs.hasNext()){ //O(E) where E = amount of edges
                 //adds the next node to the top of the stack
-                nodeStack.push(succs.next());
+                nodeStack.push(succs.next()); //O(1) src: http://stackoverflow.com/questions/7294634/what-are-the-time-complexities-of-various-data-structures
             }
         }
 
@@ -96,15 +94,15 @@ public class MyDFS<E> implements DFS<E> {
         //If there exists heads in the current graph
         if(graph.headCount() > 0){
             Iterator<Node<E>> it = graph.heads();
-            while(it.hasNext()){
-                list = dfs(it.next(), visited, list);
+            while(it.hasNext()){ //O(1) when iterating of the heads
+                list = dfs(it.next(), visited, list); //O(N+E)
             }
         }
         //Else do a dfs on the top item.
         else{
-            Node n = graph.getNodeFor(graph.allItems().get(0));
+            Node n = graph.getNodeFor(graph.allItems().get(0)); //O(1) because the nodes are contained in a hashmap and a .get takes O(1)
             if(n != null){
-                return dfs(n, visited);
+                return dfs(n, visited); //O(N+E)
             }
         }
 
